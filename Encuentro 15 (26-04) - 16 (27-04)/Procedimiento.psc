@@ -20,37 +20,22 @@ Algoritmo ejemploProcedimiemto
 	/// por lo que no asignaremos ningun valor a una variable, 
 	/// ni lo concatenaremos a un escribir
 	Si respuesta = "Clima"
-		
 		clima(nombre)
-		
 	SiNo
-		
-		Si respuesta = "Hora"
-			
+		Si respuesta = "Hora"	
 			hora(nombre)
-			
-			
 		FinSi
-		
 	FinSi
-	
-	
-	
 FinAlgoritmo
 
 /// Al no tener valor de retorno solo ponemos el nombre del proceso.
 /// El subproceso recibe el nombre para hacer un mensaje personalizado.
 SubProceso clima(nombre)
-	
 	Escribir nombre " el clima actual es de 22 grados centigrados"
-	
 FinSubProceso
 
 /// Al no tener valor de retorno solo ponemos el nombre del proceso.
 /// El subproceso recibe el nombre para hacer un mensaje personalizado.
 SubProceso hora(nombre)
-	
 	Escribir nombre " la hora actual es las 18:30 pm"
-	
 FinSubProceso
-	
