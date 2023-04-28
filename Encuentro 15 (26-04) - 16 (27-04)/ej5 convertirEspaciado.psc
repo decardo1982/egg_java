@@ -15,7 +15,12 @@ Algoritmo sin_titulo
 FinAlgoritmo
 
 
-SubProceso convertirEspaciado(frase)	
+SubProceso convertirEspaciado(frase)
+	Definir i Como Entero
+	
+	Para i <- 0 Hasta Longitud(frase) Hacer
+		Escribir Sin Saltar Subcadena(frase, i, i), " "
+	FinPara
 	
 	
 	

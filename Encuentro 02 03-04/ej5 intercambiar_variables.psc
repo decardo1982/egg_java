@@ -13,5 +13,6 @@ Algoritmo intercambiar_variables
 	auxiliar = variable2
 	variable2 = variable1
 	variable1 = auxiliar
-	Escribir "Ahora la Variable 1 es ", variable1, " y la Variable2 es ", variable2
+	Escribir "Ahora la Variable 1 es ", variable1
+	Escribir "y la Variable2 es ", variable2
 FinAlgoritmo

@@ -1,7 +1,7 @@
 //Un ciclista parte de una ciudad A a las HH horas, MM minutos y SS segundos. El tiempo
 //de viaje hasta llegar a otra ciudad B es de T segundos. Escribir un algoritmo que
 //	determine la hora de llegada a la ciudad B.
-Algoritmo sin_titulo
+Algoritmo sumar_segundos_de_viaje
 	Definir hora, minutos, segs, tiempo_viaje Como Entero
 	
 	Escribir "Ingrese la hora de salida en el siguiente formato:"
