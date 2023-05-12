@@ -21,17 +21,18 @@ Algoritmo ejExtra6_Guia5
 	FinPara
 	
 	Escribir ""
-	Escribir "Mostramos por pantalla el vector creado:"
-	Escribir ""
+	Escribir "Mostramos por pantalla el vector creado con valores aleatorios entre -100 y 100:"
+	Escribir "--------------------"
 	Para i <- 0 Hasta n - 1 Hacer
 		Escribir vector[i]	" " Sin Saltar
 	FinPara
 	Escribir ""
+	Escribir "--------------------"
 	Escribir "Valor mínimo del vector: ", min
 	Escribir "Valor máximo del vector: ", max
-	
+	Escribir ""
 	Escribir "La diferencia entre el valor máximo ", max, " y el valor mínimo ", min, " es: ", diferencia(max, min)
-	
+	Escribir ""
 FinAlgoritmo
 
 Funcion retorno <- diferencia(max, min)

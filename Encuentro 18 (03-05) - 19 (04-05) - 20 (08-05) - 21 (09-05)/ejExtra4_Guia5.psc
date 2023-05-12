@@ -35,7 +35,7 @@ Algoritmo ejExtra4_Guia5
 	Escribir "Mostramos por pantalla el vector creado:"
 	Escribir ""
 	Para i <- 0 Hasta 99 Hacer
-		Escribir notas[i], " " Sin Saltar
+		Escribir notas[i], " | " Sin Saltar
 	FinPara
 	
 	Escribir ""
@@ -46,6 +46,7 @@ Algoritmo ejExtra4_Guia5
 	Escribir "Regulares: ", regulares
 	Escribir "Buenos: ", buenos
 	Escribir "Excelentes: ", excelentes
+	Escribir "----------------------------------"
 	Escribir "Total: ", deficientes+regulares+buenos+excelentes //para chequear que sean 100 notas
 	
 FinAlgoritmo
