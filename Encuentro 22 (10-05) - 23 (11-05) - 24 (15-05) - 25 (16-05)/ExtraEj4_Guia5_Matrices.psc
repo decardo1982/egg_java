@@ -16,12 +16,14 @@ Algoritmo ExtraEj4_Guia5_Matrices
 	Escribir "Matriz B:"
 	mostrarMatriz(matrizB, 3, 3)
 	
+	Escribir matrizResultante(matrizA, matrizB)
+	
 FinAlgoritmo
 
 SubAlgoritmo rellenarMatriz(matriz, i, j) ///creamos un subproceso que inicialice una matriz
 	Para i <- 0 Hasta 2
 		Para j <- 0 Hasta 2
-			matriz[i,j] = Aleatorio(0, 1)
+			matriz[i,j] = Aleatorio(1, 5)
 		FinPara
 	FinPara
 FinSubAlgoritmo
@@ -35,7 +37,16 @@ SubAlgoritmo mostrarMatriz(matriz, i, j) ///creamos un proceso para mostrar la m
 	FinPara
 FinSubAlgoritmo
 
-Funcion matrizResultante <- matrizC(matrizA, matrizB) ///Creamos una funcion cuyo resultado sea el producto de ambas matrices
+Funcion matrizC <- matrizResultante(matrizA, matrizB) ///Creamos una funcion cuyo resultado sea el producto de ambas matrices
+	Definir matrizC, i, j Como Entero
+	Dimension matrizC[3,3]
+	Para i<-0 Hasta 2
+		Para j<-0 Hasta 2
+			matrizC[i,j] = matrizA(i,j)*matrizB(i,j)
+		FinPara
+	FinPara
+	Escribir "Matriz Resultante:"
+	mostrarMatriz(matrizC, i, j)
 	
 FinFuncion
 	
