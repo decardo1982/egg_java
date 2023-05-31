@@ -22,7 +22,11 @@ import java.util.Scanner;
 
 public class Ejercicio_11 {
     public static void main(String[] args) {
+
         Scanner leer = new Scanner(System.in);
+        boolean salir = true;
+        
+        do {
         System.out.println("Ingrese el primer número:");
         int num1 = leer.nextInt();
         System.out.println("Ingrese el segundo número:");
@@ -37,5 +41,27 @@ public class Ejercicio_11 {
         System.out.println("5. Salir");
         System.out.println("----------------");
         System.out.println("Ingrese una opción:");
+        int opcion = leer.nextInt();
+            switch (opcion) {
+                case 1:
+                    System.out.println("La suma es " + (num1 + num2));
+                    break;
+                case 2:
+                    System.out.println("La resta es " + (num1 - num2));
+                    break;
+                case 3:
+                    System.out.println("La multiplicacion es " + (num1 * num2));
+                    break;
+                case 4:
+                    System.out.println("La division es " + (num1 / num2));
+                    break;
+                case 5:
+                    System.out.println("¿Está seguro de que desea salir del programa? (S/N)");
+                    String confirma = leer.next();
+                    if ("S".equals(confirma.toUpperCase())) {
+                        salir = false;
+                    }
+            }
+        } while (salir == true);
     }
 }

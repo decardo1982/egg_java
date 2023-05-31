@@ -22,6 +22,11 @@ public class Ejercicio10 {
                 System.out.println("El número debe estar entre 1 y 20");
                 break;
             }
+            //System.out.print(num);
+            for (int j = 0; j < num; j++) {
+                System.out.print("*");
+            }
+            System.out.println("");
         }
     }
     
