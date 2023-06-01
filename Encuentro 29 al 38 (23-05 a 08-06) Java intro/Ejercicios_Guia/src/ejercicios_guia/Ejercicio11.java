@@ -19,10 +19,46 @@ public class Ejercicio11 {
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese una frase:");
         String frase = leer.nextLine();
-        System.out.println("La frase codificada es " + fraseCodificada);
-    }
-    public static String fraseCodificada(frase) {
         
+        String codificacion = codificarFrase(frase);
+        
+        System.out.println("La frase codificada es: " + codificacion);
+    }
+    public static String codificarFrase(String frase) {
+        String codificacion = "";
+        
+        for (int i = 0; i < frase.length(); i++) {
+            char caracter = frase.charAt(i);
+            
+            switch (caracter) {
+                case 'a':
+                case 'A':
+                    codificacion += "@";
+                    break;
+                case 'e':
+                case 'E':
+                    codificacion += "#";
+                    break;
+                case 'i':
+                case 'I':
+                    codificacion += "$";
+                    break;
+                case 'o':
+                case 'O':
+                    codificacion += "%";
+                    break;
+                case 'u':
+                case 'U':
+                    codificacion += "*";
+                    break;
+                default:
+                    codificacion += caracter;
+                    break;
+                    
+            }
+        }
+        return codificacion;
+     
     }
     
 }

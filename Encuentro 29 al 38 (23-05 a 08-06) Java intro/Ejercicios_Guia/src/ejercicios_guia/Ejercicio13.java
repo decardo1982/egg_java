@@ -5,10 +5,13 @@ define su tipo de dato de tal manera que te permita alojar sus nombres más adel
 */
 package ejercicios_guia;
 
-/**
- *
- * @author dario
- */
+import java.util.Scanner;
+
+
 public class Ejercicio13 {
-    
+    public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+        
+        String[] Equipo = new String[6];
+    }
 }
