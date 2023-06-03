@@ -14,7 +14,7 @@ public class Ejercicio14 {
         String[] Equipo = new String[6];
      //asigno los nombres   
         for (int i = 0; i < Equipo.length; i++) {
-            System.out.println("Ingrese el nombre para la posición " + i);
+            System.out.println("Ingrese el " + (i+1) + "º nombre");
             Equipo[i] = read.nextLine();
         }
         //muestro por pantalla
