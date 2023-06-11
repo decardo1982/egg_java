@@ -8,14 +8,25 @@ package javaintroejerciciosextra;
 import java.util.Scanner;
 
 public class EjercicioExtra_11 {
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
-        
-        System.out.println("Ingrese un número:");
-        int num = read.nextInt();
         int digitos = 0;
-        
-        
+        int residuo = 0;
+
+        System.out.println("Ingrese un número entero positivo:");
+        int num = read.nextInt();
+
+        if (num < 10 && num > 0) {
+            digitos++;
+        } else {
+            residuo = num;
+            digitos++;
+            do {
+                residuo = residuo / 10;
+                digitos++;
+            } while (residuo > 10);
+        }
+        System.out.println("el número ingresado tiene " + digitos + " dígitos");
     }
-    
 }
