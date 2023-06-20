@@ -9,9 +9,11 @@ public class Mascota {
     private int edad;
     private boolean cola;
     private String raza;
+    private int energia;
 
     public Mascota() {
 
+        this.energia = 1000;
     }
 
     public Mascota(String nombre, String apodo, String tipo) {
@@ -20,6 +22,7 @@ public class Mascota {
         if (tipo.equals("Conejo") || tipo.equals("Gato") || tipo.equals("Perro") || tipo.equals("Loro") || tipo.equals("Carpincho")) {
             this.tipo = tipo;
         }
+        this.energia = 1000;
     }
 
     public Mascota(String nombre, String apodo, String tipo, String color, int edad, boolean cola, String raza) {
@@ -30,6 +33,7 @@ public class Mascota {
         this.edad = edad;
         this.cola = cola;
         this.raza = raza;
+        this.energia = 1000;
     }
 
     public void setNombre(String nombre) {
@@ -62,7 +66,7 @@ public class Mascota {
     public void setRaza(String raza) {
         this.raza = raza;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -90,11 +94,36 @@ public class Mascota {
     public String getRaza() {
         return raza;
     }
+/**
+ * Funcion detinada a pasear
+ * 
+ * @param energiaRestar
+ * @return energia
+ */
+    public int pasear(int energiaRestar) {
+
+        energia -= energiaRestar;
+
+        return energia;
+    }
+/**
+ * Funcion destinada a pasear por vueltas * 
+ * @param energiaRestar
+ * @param vueltas
+ * @return energia
+ */
+    public int pasear(int energiaRestar, int vueltas) {
+        for (int i = 0; i < vueltas; i++) {
+            energia -= energiaRestar;
+
+        }
+
+        return energia;
+    }
 
     @Override
     public String toString() {
-        return "Mascota{" + "nombre=" + nombre + ", apodo=" + apodo + ", tipo=" + tipo + ", color=" + color + ", edad=" + edad + ", cola=" + cola + ", raza=" + raza + '}';
+        return "Mascota{" + "nombre=" + nombre + ", apodo=" + apodo + ", tipo=" + tipo + ", color=" + color + ", edad=" + edad + ", cola=" + cola + ", raza=" + raza + ", energia=" + energia + '}';
     }
-    
-}
 
+}

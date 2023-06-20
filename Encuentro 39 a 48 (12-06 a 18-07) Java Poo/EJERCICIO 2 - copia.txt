@@ -1,0 +1,104 @@
+MAIN:
+package ejercicio2poo;
+
+import Entidad.Circunferencia;
+import Servicio.CircunferenciaService;
+
+/**
+ *
+ * @author Germán Anslemo.
+ */
+
+public class Ejercicio2POO {
+
+    public static void main(String[] args) {
+        
+        CircunferenciaService circulo = new CircunferenciaService();
+
+        Circunferencia circular = circulo.crearCircunferencia();
+        
+        circulo.area(circular);
+        
+        circulo.perimetro(circular);
+
+    }
+    
+}
+
+
+
+SERVICIO:
+package Servicio;
+
+import Entidad.Circunferencia;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Germán Anselmo.
+ */
+
+public class CircunferenciaService {
+    
+    public Circunferencia crearCircunferencia() {
+        
+        Scanner ingreso = new Scanner(System.in);
+        
+        System.out.println("Ingrese el radio: ");
+        
+        Circunferencia circulo = new Circunferencia(ingreso.nextDouble());
+        
+        return circulo;
+                
+    }
+    
+    public void area(Circunferencia circulo) {
+        
+        Double area = Math.PI * Math.pow(circulo.getRadio(), 2);
+        
+        System.out.println("El área es " + area);
+        
+    }
+    
+    public void perimetro(Circunferencia circulo) {
+        
+        Double perimetro = 2 * Math.PI * circulo.getRadio();
+        
+        System.out.println("El perímetro es " + perimetro);
+        
+    }
+    
+}
+
+
+
+ENTIDAD:
+package Entidad;
+
+/**
+ *
+ * @author Germán Anselmo.
+ */
+
+public class Circunferencia {
+    
+    private Double radio;
+
+    public Circunferencia(Double radio) {
+        this.radio = radio;
+    }
+
+    public Double getRadio() {
+        return radio;
+    }
+
+    public void setRadio(Double radio) {
+        this.radio = radio;
+    }
+
+    @Override
+    public String toString() {
+        return "Circunferencia{" + "radio=" + radio + '}';
+    }
+
+}
