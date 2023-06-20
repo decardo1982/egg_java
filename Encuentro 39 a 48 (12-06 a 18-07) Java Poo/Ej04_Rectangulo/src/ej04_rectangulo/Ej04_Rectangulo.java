@@ -12,6 +12,7 @@ public class Ej04_Rectangulo {
         
         rs.calcularPerimetro(prueba1.getBase(), prueba1.getAltura());
         rs.calcularSuperficie(prueba1.getBase(), prueba1.getAltura());
+        rs.dibujarRectangulo(prueba1.getBase(), prueba1.getAltura());
 
     }
     
