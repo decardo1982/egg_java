@@ -9,6 +9,10 @@ public class Ej07_PersonaIMC {
         
         PersonaServicio PS = new PersonaServicio();
         Persona persona1 = PS.crearPersona();
+        
+        PS.calcularIMC(persona1);
+        
+        PS.esMayorDeEdad(persona1);
 
     }
     
