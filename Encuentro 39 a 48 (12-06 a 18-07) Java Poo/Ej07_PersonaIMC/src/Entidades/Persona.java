@@ -3,10 +3,10 @@ package Entidades;
 public class Persona {
     
     String nombre;
-    int edad;
-    double peso;
-    double altura;
-    String sexo;
+    private int edad;
+    private double peso;
+    private double altura;
+    private String sexo;
 
     public Persona() {
     }

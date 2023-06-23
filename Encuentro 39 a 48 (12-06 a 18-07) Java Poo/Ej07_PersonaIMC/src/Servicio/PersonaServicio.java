@@ -6,10 +6,9 @@ import java.util.Scanner;
 public class PersonaServicio {
 
     Scanner read = new Scanner(System.in).useDelimiter("\n");
+    Persona persona = new Persona();
 
     public Persona crearPersona() {
-
-        Persona persona = new Persona();
 
         System.out.print("Ingrese el nombre de la persona: ");
         persona.setNombre(read.nextLine());

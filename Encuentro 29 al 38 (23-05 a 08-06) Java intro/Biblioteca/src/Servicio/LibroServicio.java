@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class LibroServicio {
     
     Scanner read = new Scanner(System.in).useDelimiter("\n");
+        Libro l1 = new Libro();
     
     public Libro altaLibro() {
         // instanciar un objeto de tipo libro
         
-        Libro l1 = new Libro();
         
         //completar atributos
         

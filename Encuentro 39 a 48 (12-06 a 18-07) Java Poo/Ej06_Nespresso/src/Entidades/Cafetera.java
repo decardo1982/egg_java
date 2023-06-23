@@ -2,9 +2,9 @@ package Entidades;
 
 public class Cafetera {
     
-    int capacidadMaxima; //la cantidad máxima de café que puede contener la cafetera
+    private int capacidadMaxima; //la cantidad máxima de café que puede contener la cafetera
     
-    int cantidadActual; //la cantidad actual de café que hay en la cafetera
+    private int cantidadActual; //la cantidad actual de café que hay en la cafetera
 
     public Cafetera(int capacidadMaxima, int cantidadActual) {
         this.capacidadMaxima = capacidadMaxima;

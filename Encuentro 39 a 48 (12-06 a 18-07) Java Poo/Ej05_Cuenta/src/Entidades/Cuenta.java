@@ -2,13 +2,13 @@ package Entidades;
 
 public class Cuenta {
     
-    int numeroCuenta;
+    private int numeroCuenta;
     
-    int numeroDNI;
+    private int numeroDNI;
     
-    int saldoActual;
+    private int saldoActual;
     
-    double interes;
+    private double interes;
 
     public Cuenta() {
     }
