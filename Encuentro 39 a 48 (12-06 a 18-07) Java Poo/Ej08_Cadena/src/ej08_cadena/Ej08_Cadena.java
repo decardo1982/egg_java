@@ -12,7 +12,11 @@ public class Ej08_Cadena {
         Cadena frase1 = frase.crearFrase();
         frase.mostrarVocales();
         frase.invertirFrase();
-
+        frase.vecesRepetido();
+        frase.compararLongitud();
+        frase.unirFrases();
+        frase.reemplazandoAes();
+        frase.contieneLetra();
     }
     
 }
