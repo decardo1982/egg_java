@@ -1,4 +1,4 @@
-package atributodate;
+    package atributodate;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -48,7 +48,7 @@ public class Main {
 
         p1.llenarFecha(fechaNacimiento);
 
-        //  p1.mostrarFecha();
+        p1.mostrarFecha();
         System.out.println(p1);
 
     }

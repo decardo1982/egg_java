@@ -34,9 +34,9 @@ public class Perro {
 
     @Override
     public String toString() {
-        return "Perro{" + "fechaDeNacimiento:" + "Dia:" + fechaDeNacimiento.getDate() // Mostramos el dia con getDate, no con getDay
-                + " Mes:" + fechaDeNacimiento.getMonth() // Mostramos el mes 
-                + " Año:" + fechaDeNacimiento.getYear();
+        return "Perro{" + "fechaDeNacimiento: " + "Dia: " + fechaDeNacimiento.getDate() // Mostramos el dia con getDate, no con getDay
+                + " Mes: " + fechaDeNacimiento.getMonth() // Mostramos el mes 
+                + " Año: " + fechaDeNacimiento.getYear() + "}";
     }
     
     
