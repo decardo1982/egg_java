@@ -2,9 +2,9 @@ package Entidades;
 
 public class DosArreglos {
     
-    int[] arregloA;
+    private int[] arregloA;
     
-    double[] arregloB;
+    private double[] arregloB;
 
     public DosArreglos() {
     }

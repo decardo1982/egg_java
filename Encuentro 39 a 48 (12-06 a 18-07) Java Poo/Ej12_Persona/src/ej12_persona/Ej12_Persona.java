@@ -6,9 +6,12 @@ public class Ej12_Persona {
 
     public static void main(String[] args) {
         
-        PersonaServicio ejemplo = new PersonaServicio();
+        PersonaServicio ejemploPersona = new PersonaServicio();
         
-        ejemplo.crearPersona();
+        ejemploPersona.crearPersona();
+        ejemploPersona.calcularEdad();
+        ejemploPersona.menorQue(0);
+        ejemploPersona.mostrarPersona();
 
     }
     

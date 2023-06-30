@@ -7,6 +7,12 @@ public class Persona {
     String nombre;
     
     Date fechaDeNacimiento;
+    
+    int edadPersona;
+
+    public Persona(int edadPersona) {
+        this.edadPersona = edadPersona;
+    }
 
     public Persona() {
     }
@@ -30,6 +36,14 @@ public class Persona {
 
     public void setFechaDeNacimiento(Date fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
+    }
+
+    public int getEdadPersona() {
+        return edadPersona;
+    }
+
+    public void setEdadPersona(int edadPersona) {
+        this.edadPersona = edadPersona;
     }
     
     
