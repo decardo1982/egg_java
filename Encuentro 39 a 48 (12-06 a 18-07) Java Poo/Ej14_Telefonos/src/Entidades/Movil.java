@@ -1,7 +1,7 @@
 package Entidades;
 
 public class Movil {
-    
+
     private String marca;
     private double precio;
     private String modelo;
@@ -66,6 +66,17 @@ public class Movil {
 
     public void setCodigo(int[] codigo) {
         this.codigo = codigo;
+    }
+
+    @Override
+    public String toString() {
+        return "Movil{" + "marca= " + 
+                marca + ", precio= $" + 
+                precio + ", modelo= " + 
+                modelo + ", memoriaRam= " + 
+                memoriaRam + "GB, almacenamiento= " + 
+                almacenamiento + "GB, codigo= " + 
+                codigo + '}';
     }
     
     

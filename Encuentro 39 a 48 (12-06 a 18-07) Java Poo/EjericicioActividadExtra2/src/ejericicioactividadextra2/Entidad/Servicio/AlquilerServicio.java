@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ejericicioactividadextra2.Entidad.Servicio;
 
 import ejericicioactividadextra2.Entidad.Alquiler;
@@ -5,32 +10,42 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Scanner;
 
+/**
+ *
+ * @author Daniel Atehortuua
+ */
 public class AlquilerServicio {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
     Alquiler alqui = new Alquiler();
     Calendar fechaInicio = Calendar.getInstance();
     Calendar fechaFin = Calendar.getInstance();
-    private Alquiler[] alquileres = new Alquiler[3];
+    private Alquiler[] alquileres = new Alquiler[1];
 
     public void crearAlquiler() {
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             if (alquileres[i] == null) {
                 System.out.println("Ingrese el nombre de la pelicula alquilada ");
                 alqui.setPeliculaAlquilada(leer.next());
                 System.out.println("Ingrese el año de fecha inicio: ");
-                fechaInicio.set(Calendar.YEAR, leer.nextInt());
+                int anoInicio = leer.nextInt();
+                fechaInicio.set(Calendar.YEAR, anoInicio);
                 System.out.println("Ingrese el mes de fecha inicio: ");
-                fechaInicio.set(Calendar.MONTH, leer.nextInt());
+                int mesInicio = leer.nextInt();
+                fechaInicio.set(Calendar.MONTH, mesInicio);
                 System.out.println("Ingrese el día de fecha inicio: ");
-                fechaInicio.set(Calendar.DATE, leer.nextInt());
+                int diaInicio = leer.nextInt();
+                fechaInicio.set(Calendar.DATE, diaInicio);
                 System.out.println("Ingrese el año de fecha fin: ");
-                fechaFin.set(Calendar.YEAR, leer.nextInt());
+                int anoFin = leer.nextInt();
+                fechaFin.set(Calendar.YEAR, anoFin);
                 System.out.println("Ingrese el mes de fecha fin: ");
-                fechaFin.set(Calendar.MONTH, leer.nextInt());
+                int mesFin = leer.nextInt();
+                fechaFin.set(Calendar.MONTH, mesFin);
                 System.out.println("Ingrese el día de fecha fin: ");
-                fechaFin.set(Calendar.DATE, leer.nextInt());
+                int diaFin = leer.nextInt();
+                fechaFin.set(Calendar.DATE, diaFin);
 
                 alquileres[i] = alqui;
             } else {
@@ -43,7 +58,7 @@ public class AlquilerServicio {
     public void ListarPeliculasAlquiladas() {
 
         System.out.println("Peliculas alquiladas");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             System.out.println(alquileres[i]);
         }
     }
@@ -60,7 +75,7 @@ public class AlquilerServicio {
         System.out.println("Ingrese el día de fecha a buscar: ");
         fechaBuscar.set(Calendar.DATE, leer.nextInt());
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             if (alquileres[i].getFechaInicio().after(fechaBuscar) || alquileres[i].getFechaFin().before(fechaBuscar)) {
                 System.out.println("Si existe");
                 System.out.println(alquileres[i].toString());
@@ -75,12 +90,15 @@ public class AlquilerServicio {
     }
     
     public void calcularIngreso(){
-        
-        int dias = 0;
-        Calendar fechaLimite = alquileres.getFechaInicio();
-        fechaLimite.add(Calendar.DATE, 3);
-        for (int i = 0; i < 3; i++) {
-            dias = alquileres[i].getFechaInicio().get(Calendar.DATE) - alquileres[i].getFechaFin().get(Calendar.DATE);
+                
+        for (int i = 0; i < 1; i++) {
+           int dias = alquileres[i].getFechaInicio().get(Calendar.DATE) - alquileres[i].getFechaFin().get(Calendar.DATE);
+           if(dias == 3 ){
+               alquileres[i].setPrecio(10);
+           }
+           else{
+               alquileres[i].setPrecio(20);
+           }
         }
         
     }

@@ -15,11 +15,11 @@ import java.util.Scanner;
 public class PeliculaServicio {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
-    private Pelicula[] peliculas = new Pelicula[5];
+    private Pelicula[] peliculas = new Pelicula[1];
 
     public void crearPelicula() {
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 1; i++) {
             if (peliculas[i] == null) {
                 Pelicula peli = new Pelicula();
                 System.out.println("Ingrese el título: ");
@@ -43,7 +43,7 @@ public class PeliculaServicio {
     public void ListarPeliculas(){
     
         System.out.println("Peliculas disponibles");
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 1; i++) {
             System.out.println(peliculas[i]);
         }
         
@@ -55,9 +55,28 @@ public class PeliculaServicio {
         String buscarTitulo = leer.next();
         boolean existe = false;
         
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 1; i++) {
             
            if(peliculas[i].getTitulo().equals(buscarTitulo)){
+               System.out.println("Si existe");
+               existe = true;
+               break;
+           }
+        }
+        if(!existe){
+            System.out.println("No existe");
+        }
+    }
+    
+    public void peliculaPorGenero(){
+    
+        System.out.println("Ingrese el género de la película que desea buscar:");
+        String buscarGenero = leer.next();
+        boolean existe = false;
+        
+        for (int i = 0; i < 1; i++) {
+            
+           if(peliculas[i].getGenero().equals(buscarGenero)){
                System.out.println("Si existe");
                existe = true;
                break;

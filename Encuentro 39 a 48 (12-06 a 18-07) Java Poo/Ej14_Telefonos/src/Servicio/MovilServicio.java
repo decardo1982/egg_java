@@ -23,8 +23,38 @@ public class MovilServicio {
     Movil celular = new Movil();
     
     public Movil cargarCelular(){
-        return null;
         
+        System.out.println("Ingrese los datos del celular:");
+        System.out.print("Marca: ");
+        celular.setMarca(read.next());
+        System.out.print("Precio: ");
+        celular.setPrecio(read.nextDouble());
+        System.out.print("Modelo: ");
+        celular.setModelo(read.next());
+        System.out.print("Memoria RAM: ");
+        celular.setMemoriaRam(read.nextInt());
+        System.out.print("Almacenamiento: ");
+        celular.setAlmacenamiento(read.nextInt());
+        System.out.print("Código: ");
+        System.out.println("");
+        cargarCodigo();
+        
+        return celular;
+    }
+    
+    public int[] cargarCodigo(){
+        System.out.println("Ingrese los 7 dígitos del código:");
+        
+        int[] codigoMovil = new int[7];
+        for (int i = 0; i < 7; i++) {
+            codigoMovil[i] = read.nextInt();
+        }
+        
+        return codigoMovil;
+    }
+    
+    public void mostrarCelular(){
+        System.out.println(celular.toString());
         
     }
     
