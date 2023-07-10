@@ -30,16 +30,6 @@ public class AhorcadoServicio {
         return Ahorcado;
     }
 
-    public int longitud() {
-        int longitudPalabra = Ahorcado.getPalabra().length;
-        System.out.println("La palabra tiene " + longitudPalabra + " letras");
-        return longitudPalabra;
-    }
 
-    public Ahorcado buscar(char letra) {
-
-        System.out.print("Ingrese una letra: ");
-        char letra = read.next();
-    }
 
 }
