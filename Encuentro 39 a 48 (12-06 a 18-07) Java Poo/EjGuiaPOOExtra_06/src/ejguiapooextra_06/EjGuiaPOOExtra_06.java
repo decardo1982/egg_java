@@ -8,7 +8,8 @@ public class EjGuiaPOOExtra_06 {
         
         AhorcadoServicio juego = new AhorcadoServicio();
         
-        juego.crearJuego();
+        juego.juego();
+        
 
     }
     
