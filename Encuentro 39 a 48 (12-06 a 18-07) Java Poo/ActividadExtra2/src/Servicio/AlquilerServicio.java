@@ -20,7 +20,7 @@ public class AlquilerServicio {
     
     public void crearPelicula(){
         System.out.println("Ingrese el título de la pelicula alquilada: ");
-        alqui.setPeliculaAlquilada(read.next());
+       // alqui.setPeliculaAlquilada(read.next());
         System.out.println("Ingrese el año:");
         fechaInicio.set(Calendar.YEAR, read.nextInt());
         System.out.println("Ingrese el mes:");

@@ -4,17 +4,17 @@ import Entidades.NIF;
 import java.util.Scanner;
 
 public class NIFServicio {
-    
+
     Scanner read = new Scanner(System.in).useDelimiter("\n");
-    
+
     NIF Nif = new NIF();
-    
+
     public NIF crearNif() {
         System.out.println("Ingrese el DNI:");
         Nif.setDNI(read.nextInt());
-        
+
         int resto = Nif.getDNI() % 23;
-        
+
         char[] vector = new char[23];
         vector[0] = 'T';
         vector[1] = 'R';
@@ -39,14 +39,13 @@ public class NIFServicio {
         vector[20] = 'C';
         vector[21] = 'K';
         vector[22] = 'E';
-        
+
         Nif.setLetra(vector[resto]);
-        
-        return null;
-        
+
+        return Nif;
     }
-    
-    public void Mostrar(){
+
+    public void Mostrar() {
         System.out.println("NIF: " + Nif.getDNI() + "-" + Nif.getLetra());
     }
 }
