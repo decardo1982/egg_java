@@ -8,6 +8,7 @@ public class FakeBinary {
     public static void main(String[] args) {
 
         String numberString = "366058562030849490134388085";
+        System.out.println("numberString original = " + numberString);
 
         char letra;
         int numAux;
