@@ -1,26 +1,32 @@
 package Services;
 
-import Entities.Libro;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LibroServicio {
     
-    private Scanner read;
-    private ArrayList<Libro> libro;
+    ArrayList<String> libros = new ArrayList();
+    Scanner read = new Scanner(System.in).useDelimiter("\n");
     
-    public LibroServicio(){
-        this.read = new Scanner(System.in).useDelimiter("\n");
-        this.libro = new ArrayList();
-    }
-    
-    public Libro crearLibro(){
-        System.out.println("Ingrese título del libro:");
-        String titulo = read.next();
-        System.out.println("Ingrese nombre del autor:");
-        String autor = read.next();
+    public void cargarLibros(){
+        System.out.print("Ingrese la cantidad de libros a cargar: ");
+        int cantidad = read.nextInt();
+        System.out.println("");
+        for (int i = 0; i < cantidad; i++) {
+            System.out.print("Ingrese el título Nº " + (i+1) + ": ");
+            String titulo = read.next();
+            libros.add(titulo);
+        }
         
-        return new Libro(titulo, autor);
     }
     
+    public void mostrarLista(){
+        System.out.println("");
+        System.out.println("Lista de libros:");
+        System.out.println("----------------");
+        for (String var : libros) {
+            System.out.println(var);
+        }
+    }
+
 }

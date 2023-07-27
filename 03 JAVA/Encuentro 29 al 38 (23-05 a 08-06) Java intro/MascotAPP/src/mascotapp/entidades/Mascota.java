@@ -1,12 +1,14 @@
 package mascotapp.entidades;
 
-public class Mascota {
+import java.util.Objects;
+
+public class Mascota implements Comparable<Mascota> {
 
     private String nombre;
     private String apodo;
     private String tipo; //Conejo, Gato, Perro, Loro, Carpincho
     private String color;
-    private int edad;
+    private Integer edad;
     private boolean cola;
     private String raza;
     private int energia;
@@ -55,7 +57,7 @@ public class Mascota {
         this.color = color;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
@@ -83,7 +85,7 @@ public class Mascota {
         return color;
     }
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
@@ -122,8 +124,70 @@ public class Mascota {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 17 * hash + Objects.hashCode(this.nombre);
+        hash = 17 * hash + Objects.hashCode(this.apodo);
+        hash = 17 * hash + Objects.hashCode(this.tipo);
+        hash = 17 * hash + Objects.hashCode(this.color);
+        hash = 17 * hash + Objects.hashCode(this.edad);
+        hash = 17 * hash + (this.cola ? 1 : 0);
+        hash = 17 * hash + Objects.hashCode(this.raza);
+        hash = 17 * hash + this.energia;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Mascota other = (Mascota) obj;
+        if (this.cola != other.cola) {
+            return false;
+        }
+        if (this.energia != other.energia) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.apodo, other.apodo)) {
+            return false;
+        }
+        if (!Objects.equals(this.tipo, other.tipo)) {
+            return false;
+        }
+        if (!Objects.equals(this.color, other.color)) {
+            return false;
+        }
+        if (!Objects.equals(this.raza, other.raza)) {
+            return false;
+        }
+        if (!Objects.equals(this.edad, other.edad)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
+    @Override
     public String toString() {
         return "Mascota{" + "nombre=" + nombre + ", apodo=" + apodo + ", tipo=" + tipo + ", color=" + color + ", edad=" + edad + ", cola=" + cola + ", raza=" + raza + ", energia=" + energia + '}';
+    }
+
+    @Override
+    public int compareTo(Mascota t) {
+        return this.nombre.compareTo(t.getNombre());
+        
+
     }
 
 }
