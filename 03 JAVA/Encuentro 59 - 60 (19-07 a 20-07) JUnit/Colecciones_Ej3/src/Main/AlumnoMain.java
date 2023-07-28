@@ -24,6 +24,7 @@ public class AlumnoMain {
         AlumnoService as = new AlumnoService();
         
         as.crearAlumno();
+        as.buscarAlumno();
 
     }
     
