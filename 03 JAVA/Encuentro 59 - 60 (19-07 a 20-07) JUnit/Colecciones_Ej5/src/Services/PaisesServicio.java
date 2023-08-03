@@ -43,6 +43,8 @@ public class PaisesServicio {
         Paises.add("Islandia");
         Paises.add("Croacia");
         Paises.add("Grecia");
+        Paises.add("Grecia");
+        Paises.add("Grecia");
         Paises.add("Armenia");
         mostrarPaises();
     }

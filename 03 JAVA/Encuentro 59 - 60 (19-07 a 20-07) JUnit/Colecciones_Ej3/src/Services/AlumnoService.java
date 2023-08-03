@@ -11,12 +11,8 @@ public class AlumnoService {
     ArrayList<Alumno> alumnos = new ArrayList();
 
     public void crearAlumno() {
-
         String respuesta = "";
-
         do {
-            
-            
             System.out.print("Ingrese el nombre del alumno: ");
             String nombre = read.next();
             System.out.print("Ingrese la nota Nº 1: ");

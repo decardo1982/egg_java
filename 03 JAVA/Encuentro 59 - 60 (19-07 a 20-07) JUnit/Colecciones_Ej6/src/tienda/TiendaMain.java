@@ -17,7 +17,7 @@ public class TiendaMain {
     public static void main(String[] args) {
         
         ProductoService ps = new ProductoService();
-        
+        ps.testProducto();
         ps.mainMenu();
 
     }
