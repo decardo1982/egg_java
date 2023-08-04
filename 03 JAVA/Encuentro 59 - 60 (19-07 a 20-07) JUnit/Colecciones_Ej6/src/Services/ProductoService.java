@@ -84,20 +84,41 @@ public class ProductoService {
         System.out.println("--------------------");
         System.out.println("Ingrese el producto a modificar:");
         String modificarProducto = read.next();
+        boolean encontrado = false;
 
         if (productosTienda.containsKey(modificarProducto)) {
+            encontrado = true;
+        }
+        if (encontrado) {
             System.out.println("Ingrese el nuevo precio:");
             int nuevoPrecio = read.nextInt();
             productosTienda.put(modificarProducto, nuevoPrecio);
             System.out.println("El precio se modificó correctamente.");
-        } else {
+        }
+        if (!encontrado) {
             System.out.println("El producto indicado no existe.");
         }
 
     }
 
     private void eliminarProducto() {
-        
+        System.out.println("--------------------");
+        System.out.println("Eliminar un producto:");
+        System.out.println("--------------------");
+        System.out.println("Ingrese el producto a eliminar:");
+        String eliminarProducto = read.next();
+        boolean encontrado = false;
+
+        if (productosTienda.containsKey(eliminarProducto)) {
+            encontrado = true;
+        }
+        if (encontrado) {
+            productosTienda.remove(eliminarProducto);
+            System.out.println("El precio se eliminó correctamente.");
+        }
+        if (!encontrado) {
+            System.out.println("El producto indicado no existe.");
+        }
 
     }
 
@@ -118,11 +139,6 @@ public class ProductoService {
         productosTienda.put("Cuchillo", 300);
         productosTienda.put("Tenedor", 300);
         productosTienda.put("Cuchara", 300);
-        productosTienda.put("Olla Grande", 5500);
-        productosTienda.put("Olla chica", 3000);
-        productosTienda.put("Repasador", 1100);
-        productosTienda.put("Esponja", 200);
-        productosTienda.put("Servilletas", 500);
     }
 
 }
