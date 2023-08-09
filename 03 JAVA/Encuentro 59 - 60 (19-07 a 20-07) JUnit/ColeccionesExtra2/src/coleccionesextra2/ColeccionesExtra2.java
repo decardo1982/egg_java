@@ -10,15 +10,19 @@ elija o de salir del programa. Al final se deberá mostrar la lista con todos lo
  */
 package coleccionesextra2;
 
-import Entities.CantanteFamoso;
-import java.util.ArrayList;
+import Service.CantanteFamosoService;
+
+
 
 public class ColeccionesExtra2 {
 
     public static void main(String[] args) {
         
+        CantanteFamosoService canfan = new CantanteFamosoService();
         
-
+        canfan.crearLista();
+        canfan.mostrarLista();
+        canfan.menu();
     }
-    
+
 }
