@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="mascotapp.entidades">
+  <ClassDiagramComponents>
+    <Class name="Mascota" package="mascotapp.entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apodo" type="String" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+        <Field name="edad" type="Integer" visibility="private"/>
+        <Field name="cola" type="boolean" visibility="private"/>
+        <Field name="raza" type="String" visibility="private"/>
+        <Field name="energia" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apodo"/>
+          <Argument type="String" name="tipo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apodo"/>
+          <Argument type="String" name="tipo"/>
+          <Argument type="String" name="color"/>
+          <Argument type="int" name="edad"/>
+          <Argument type="boolean" name="cola"/>
+          <Argument type="String" name="raza"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setApodo" returnType="void" visibility="public">
+          <Argument type="String" name="apodo"/>
+        </Method>
+        <Method name="setTipo" returnType="void" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="Integer" name="edad"/>
+        </Method>
+        <Method name="setCola" returnType="void" visibility="public">
+          <Argument type="boolean" name="cola"/>
+        </Method>
+        <Method name="setRaza" returnType="void" visibility="public">
+          <Argument type="String" name="raza"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getApodo" returnType="String" visibility="public"/>
+        <Method name="getTipo" returnType="String" visibility="public"/>
+        <Method name="getColor" returnType="String" visibility="public"/>
+        <Method name="getEdad" returnType="Integer" visibility="public"/>
+        <Method name="isCola" returnType="boolean" visibility="public"/>
+        <Method name="getRaza" returnType="String" visibility="public"/>
+        <Method name="pasear" returnType="int" visibility="public">
+          <Argument type="int" name="energiaRestar"/>
+        </Method>
+        <Method name="pasear" returnType="int" visibility="public">
+          <Argument type="int" name="energiaRestar"/>
+          <Argument type="int" name="vueltas"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="compareTo" returnType="int" visibility="public">
+          <Argument type="Mascota" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="mascotapp.entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="public"/>
+        <Field name="apellido" type="String" visibility="public"/>
+        <Field name="dni" type="int" visibility="public"/>
+        <Field name="nacimiento" type="Date" visibility="public"/>
+        <Field name="pais" type="String" visibility="public"/>
+        <Field name="mascota" type="List&lt;Mascota&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="dni"/>
+          <Argument type="Date" name="nacimiento"/>
+          <Argument type="String" name="pais"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="mascotapp.entidades.Mascota" target="mascotapp.entidades.Mascota" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mascota" source="mascotapp.entidades.Usuario" target="mascotapp.entidades.Mascota" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Mascota&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

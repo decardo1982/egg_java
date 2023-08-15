@@ -2,6 +2,7 @@
 package mascotapp.entidades;
 
 import java.util.Date;
+import java.util.List;
 
 public class Usuario {
     
@@ -10,6 +11,8 @@ public class Usuario {
     public int dni;
     public Date nacimiento;
     public String pais;
+    
+//    private List<Mascota> mascota;
 
     public Usuario(){
         
