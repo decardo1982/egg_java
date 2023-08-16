@@ -8,11 +8,23 @@ la clase Persona, la información del Perro y de la Persona.
  */
 package clases_ej1;
 
+import Entities.Perro;
+import Entities.Persona;
+
 
 public class Clases_Ej1 {
 
 
     public static void main(String[] args) {
+        
+        Perro perro1 = new Perro("Sarah", "Mestizo", 6, "Pequeño");
+        Perro perro2 = new Perro("Taco", "Ojevero alemán", 11, "Grande");
+        
+        Persona persona1 = new Persona("Dario", "Cardozo", 41, 29414783, perro1);
+        Persona persona2 = new Persona("Cecilia", "garcia", 42, 28627390, perro2);
+        
+        System.out.println("Persona 1: " + persona1);
+        System.out.println("Persona 2: " + persona2);
 
     }
     
