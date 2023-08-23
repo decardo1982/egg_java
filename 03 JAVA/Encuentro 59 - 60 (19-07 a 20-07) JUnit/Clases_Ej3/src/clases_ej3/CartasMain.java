@@ -9,6 +9,7 @@ public class CartasMain {
         BarajaService bs = new BarajaService();
         
         bs.crearBaraja();
+        bs.mainMenu();
 
     }
 

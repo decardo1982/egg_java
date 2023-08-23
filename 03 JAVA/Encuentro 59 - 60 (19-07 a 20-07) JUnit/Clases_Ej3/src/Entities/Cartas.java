@@ -34,7 +34,7 @@ public class Cartas {
 
     @Override
     public String toString() {
-        return "Cartas{" + "numero=" + numero + ", palo=" + palo + '}';
+        return "Carta {" + "numero " + numero + " de " + palo + '}';
     }
 
 }

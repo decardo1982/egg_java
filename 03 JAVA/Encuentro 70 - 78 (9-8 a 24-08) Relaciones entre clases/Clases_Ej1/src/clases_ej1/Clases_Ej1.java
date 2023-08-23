@@ -20,8 +20,8 @@ public class Clases_Ej1 {
         Perro perro1 = new Perro("Sarah", "Mestizo", 6, "Pequeño");
         Perro perro2 = new Perro("Taco", "Ojevero alemán", 11, "Grande");
         
-        Persona persona1 = new Persona("Dario", "Cardozo", 41, 29414783, perro1);
-        Persona persona2 = new Persona("Cecilia", "garcia", 42, 28627390, perro2);
+        Persona persona1 = new Persona("Dario", "Cardozo", 41, 11222333, perro1);
+        Persona persona2 = new Persona("Cecilia", "garcia", 42, 12111222, perro2);
         
         System.out.println("Persona 1: " + persona1);
         System.out.println("Persona 2: " + persona2);
