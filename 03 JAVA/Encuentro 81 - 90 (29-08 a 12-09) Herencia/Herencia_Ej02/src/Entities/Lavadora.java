@@ -1,25 +1,25 @@
 package Entities;
 
-import static java.lang.Character.toUpperCase;
 import java.util.Scanner;
 
-public class Electrodomestico {
+public class Lavadora extends Electrodomestico {
 
-    Scanner read = new Scanner(System.in).useDelimiter("n");
+    private Integer carga;
 
-    protected Double precio;
-    protected String color;
-    protected Double peso;
-    protected Character consumoEnergetico;
-
-    public Electrodomestico() {
+    public Lavadora(Integer carga, Double precio, String color, Double peso, Character consumoEnergetico) {
+        super(precio, color, peso, consumoEnergetico);
+        this.carga = carga;
     }
 
-    public Electrodomestico(Double precio, String color, Double peso, Character consumoEnergetico) {
-        this.precio = precio;
-        this.color = color;
-        this.peso = peso;
-        this.consumoEnergetico = consumoEnergetico;
+    public Lavadora() {
+    }
+
+    public Integer getCarga() {
+        return carga;
+    }
+
+    public void setCarga(Integer carga) {
+        this.carga = carga;
     }
 
     public Scanner getRead() {
@@ -61,6 +61,7 @@ public class Electrodomestico {
     public void setConsumoEnergetico(Character consumoEnergetico) {
         this.consumoEnergetico = consumoEnergetico;
     }
-
     
+    
+
 }

@@ -1,15 +1,17 @@
 package herencia_ej02;
 
-import Entities.Electrodomestico;
+import Services.ElectrodomesticoService;
 
 public class Herencia_Ej02 {
 
     public static void main(String[] args) {
         
-        Electrodomestico e1 = new Electrodomestico();
+        ElectrodomesticoService e1 = new ElectrodomesticoService();
         
-//        e1.comprobarConsumoEnergetico('p');
+        e1.comprobarConsumoEnergetico('p');
         e1.comprobarColor("verde");
+        e1.crearElectrodomestico();
+        e1.precioFinal();
 
     }
     
