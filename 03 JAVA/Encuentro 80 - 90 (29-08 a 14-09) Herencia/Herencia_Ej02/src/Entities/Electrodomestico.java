@@ -1,16 +1,19 @@
 package Entities;
 
+import Enums.Color;
+import Enums.ConsumoEnergetico;
+
 public class Electrodomestico {
 
     protected Double precio;
-    protected String color;
+    protected Color color;
     protected Double peso;
-    protected Character consumoEnergetico;
+    protected ConsumoEnergetico consumoEnergetico;
 
     public Electrodomestico() {
     }
 
-    public Electrodomestico(Double precio, String color, Double peso, Character consumoEnergetico) {
+    public Electrodomestico(Double precio, Color color, Double peso, ConsumoEnergetico consumoEnergetico) {
         this.precio = precio;
         this.color = color;
         this.peso = peso;
@@ -25,11 +28,11 @@ public class Electrodomestico {
         this.precio = precio;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
@@ -41,12 +44,17 @@ public class Electrodomestico {
         this.peso = peso;
     }
 
-    public Character getConsumoEnergetico() {
+    public ConsumoEnergetico getConsumoEnergetico() {
         return consumoEnergetico;
     }
 
-    public void setConsumoEnergetico(Character consumoEnergetico) {
+    public void setConsumoEnergetico(ConsumoEnergetico consumoEnergetico) {
         this.consumoEnergetico = consumoEnergetico;
+    }
+
+    @Override
+    public String toString() {
+        return "Electrodomestico{" + "precio=" + precio + ", color=" + color + ", peso=" + peso + ", consumoEnergetico=" + consumoEnergetico + '}';
     }
 
 }

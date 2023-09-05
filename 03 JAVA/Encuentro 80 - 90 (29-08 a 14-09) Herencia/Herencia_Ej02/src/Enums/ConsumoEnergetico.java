@@ -26,7 +26,5 @@ public enum ConsumoEnergetico {
     public static ConsumoEnergetico getF() {
         return F;
     }
-    
-    
 
 }

@@ -1,7 +1,8 @@
 package Services;
 
 import Entities.Electrodomestico;
-import static java.lang.Character.toUpperCase;
+import Enums.Color;
+import Enums.ConsumoEnergetico;
 import java.util.Scanner;
 
 public class ElectrodomesticoService {
@@ -10,75 +11,92 @@ public class ElectrodomesticoService {
 
     Electrodomestico electro = new Electrodomestico();
 
-    public Character comprobarConsumoEnergetico(char letra) {
-//        System.out.println("letra " + letra);
-        Character aux = toUpperCase(letra); //pasamos el caracter a mayúscula
-//        System.out.println("aux " + aux);
+    public void comprobarConsumoEnergetico(char letra) {
 
-        if (aux == 'A' || aux == 'B' || aux == 'C' || aux == 'D' || aux == 'E') {
+        switch (letra) {
+            case 'A':
+                electro.setConsumoEnergetico(ConsumoEnergetico.A);
+                break;
+            case 'B':
+                electro.setConsumoEnergetico(ConsumoEnergetico.B);
+                break;
+            case 'C':
+                electro.setConsumoEnergetico(ConsumoEnergetico.C);
+                break;
+            case 'D':
+                electro.setConsumoEnergetico(ConsumoEnergetico.D);
+                break;
+            case 'E':
+                electro.setConsumoEnergetico(ConsumoEnergetico.E);
+                break;
+            default:
+                electro.setConsumoEnergetico(ConsumoEnergetico.F);
+                break;
 
-            electro.setConsumoEnergetico(aux);
-
-        } else {
-            electro.setConsumoEnergetico('F');
         }
-        System.out.println("ConsumoEnergetico " + electro.getConsumoEnergetico());
-        return electro.getConsumoEnergetico();
 
     }
 
-    public String comprobarColor(String color) {
-        //System.out.println("color " + color);
-        String aux = color.toUpperCase();
-        //System.out.println("aux " + aux);
+    public void comprobarColor(String color) {
+        color = color.toUpperCase();
 
-        if (aux.equals("NEGRO") || aux.equals("ROJO") || aux.equals("AZUL") || aux.equals("GRIS")) {
-            electro.setColor(aux);
-        } else {
-            electro.setColor("BLANCO");
+        switch (color) {
+            case "NEGRO":
+                electro.setColor(Color.NEGRO);
+                break;
+            case "ROJO":
+                electro.setColor(Color.ROJO);
+                break;
+            case "AZUL":
+                electro.setColor(Color.AZUL);
+                break;
+            case "GRIS":
+                electro.setColor(Color.GRIS);
+                break;
+            default:
+                electro.setColor(Color.BLANCO);
+                break;
         }
-
-        System.out.println("color = " + electro.getColor());
-        return electro.getColor();
 
     }
 
     public void crearElectrodomestico() {
         electro.setPrecio(1000d);
 
-        System.out.println("Ingrese el peso del producto: ");
-        //desarrollar control para no ingesar valor menor o igualque 0
-
-        electro.setPeso(read.nextDouble());
-
         System.out.println("Indique el color: ");
-        electro.setColor((comprobarColor(read.next())));
+        String color = read.nextLine();
+        comprobarColor(color);
+        System.out.println("color: " + electro.getColor());
 
         System.out.println("Indique consumo energético: (A, B, C, D, E o F)");
-        electro.setConsumoEnergetico(comprobarConsumoEnergetico(read.next().charAt(0)));
+        char consumo = read.next().toUpperCase().charAt(0);
+
+        comprobarConsumoEnergetico(consumo);
+        System.out.println("consumo: " + electro.getConsumoEnergetico());
+
+        System.out.println("Ingrese el peso del producto: ");
+        electro.setPeso(read.nextDouble());
+        System.out.println("peso: " + electro.getPeso());
 
     }
 
-    public double precioFinal() {
-        double precioFinal = electro.getPrecio();
+    public void precioFinal() {
+        Double precioFinal = electro.getPrecio();
 
         switch (electro.getConsumoEnergetico()) {
-            case 'A':
+            case A:
                 precioFinal += 1000d;
                 break;
-            case 'B':
+            case B:
                 precioFinal += 800d;
                 break;
-
-            case 'C':
+            case C:
                 precioFinal += 600d;
                 break;
-
-            case 'D':
+            case D:
                 precioFinal += 500d;
                 break;
-
-            case 'E':
+            case E:
                 precioFinal += 300d;
                 break;
             default:
@@ -107,16 +125,14 @@ public class ElectrodomesticoService {
 
         electro.setPrecio(precioFinal);
 
-        return electro.getPrecio();
-
     }
+
     public void mostrar() {
-        //precio color peso consumo carga
-        System.out.println("Precio lavadora: " + electro.getPrecio());
-        System.out.println("Color lavadora: " + electro.getColor());
-        System.out.println("Peso lavadora: " + electro.getPeso());
-        System.out.println("Consumo energético: " + electro.getConsumoEnergetico());
-      
+        System.out.println("Color: " + electro.getColor());
+        System.out.println("Consumo: " + electro.getConsumoEnergetico());
+        System.out.println("Precio: " + electro.getPrecio());
+        System.out.println("Peso: " + electro.getPeso());
+
     }
 
 }

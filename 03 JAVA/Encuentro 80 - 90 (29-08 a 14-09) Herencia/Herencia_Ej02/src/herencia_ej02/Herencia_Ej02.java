@@ -1,23 +1,23 @@
 package herencia_ej02;
 
-import Services.ElectrodomesticoService;
-import Services.LavadoraService;
+import Entities.Lavarropa;
+import Services.LavarropaService;
+import Services.TelevisorService;
 
 public class Herencia_Ej02 {
 
     public static void main(String[] args) {
-
-        ElectrodomesticoService e1 = new ElectrodomesticoService();
-
-//        e1.comprobarConsumoEnergetico('p');
-//        e1.comprobarColor("verde");
-//        e1.crearElectrodomestico();
-//        e1.precioFinal();
-        LavadoraService sl = new LavadoraService();
         
-        sl.crearLavadora();
-        sl.mostrar();
+//        LavarropaService lava = new LavarropaService();
+//        lava.crearLavarropa();
+//        lava.precioFinal();
+//        lava.mostrar();
         
+        TelevisorService tv = new TelevisorService();
+        tv.crearTelevisor();
+        tv.precioFinal();
+        tv.mostrar();
+            
 
     }
 

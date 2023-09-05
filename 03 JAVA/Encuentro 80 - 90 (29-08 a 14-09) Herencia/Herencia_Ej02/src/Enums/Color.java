@@ -2,7 +2,7 @@ package Enums;
 
 public enum Color {
 
-    BLANCO, NEGRO, ROJO, AZUL;
+    BLANCO, NEGRO, ROJO, AZUL, GRIS;
 
     public static Color getBLANCO() {
         return BLANCO;
@@ -19,7 +19,9 @@ public enum Color {
     public static Color getAZUL() {
         return AZUL;
     }
-    
-    
+
+    public static Color getGRIS() {
+        return GRIS;
+    }
 
 }
