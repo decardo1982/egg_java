@@ -1,0 +1,6 @@
+package Enum;
+
+public enum Materia {
+
+    MATEMATICA_DISCRETA, PROGRAMACION_OBJETOS, HABILIDADES_BLANDAS
+}
