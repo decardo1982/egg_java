@@ -1,5 +1,6 @@
 package Entities;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,25 +19,26 @@ public class Juego {
         do {
 
             try {
-                System.out.println("Ingrese un número:");
-                valor = read.nextInt();
+                System.out.print("Ingrese un número: ");
                 intentos++;
+                valor = read.nextInt();
+                if (valor > numeroAleatorio) {
+                    System.out.println("El número es menor");
+                }
+                if (valor < numeroAleatorio) {
+                    System.out.println("El número es mayor");
+                }
 
-            } catch (Exception e) {
-                System.out.println();
-            }
-
-            if (valor > numeroAleatorio) {
-                System.out.println("El número es menor");
-            }
-            if (valor < numeroAleatorio) {
-                System.out.println("El número es mayor");
+            } catch (InputMismatchException e) {
+                System.out.print("¡Solamente números! ");
+                read.next();
             }
 
         } while (valor != numeroAleatorio);
         System.out.println("¡Acertaste!\n"
                 + "El número aleatorio " + numeroAleatorio + " es igual al número ingresado " + valor + "\n"
                 + "y lo hiciste en " + intentos + " intentos.");
+        read.close();
 
     }
 }
