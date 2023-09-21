@@ -10,7 +10,7 @@ public class Excepciones_Ej02 {
         int[] vector = new int[5];
 
         try {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 10; i++) {
                 vector[i] = 1;
                 System.out.println(i);
             }

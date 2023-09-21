@@ -19,7 +19,7 @@ public class Juego {
         do {
 
             try {
-                System.out.print("Ingrese un número: ");
+                System.out.print("Ingrese un número entero: ");
                 intentos++;
                 valor = read.nextInt();
                 if (valor > numeroAleatorio) {
@@ -30,7 +30,7 @@ public class Juego {
                 }
 
             } catch (InputMismatchException e) {
-                System.out.print("¡Solamente números! ");
+                System.out.print("¡Solamente números enteros! ");
                 read.next();
             }
 
