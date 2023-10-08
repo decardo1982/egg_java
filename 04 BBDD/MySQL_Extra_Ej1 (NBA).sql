@@ -1,4 +1,4 @@
-USE nba;
+USE NBA;
 SELECT * FROM JUGADORES;
 SELECT * FROM EQUIPOS;
 
@@ -90,4 +90,4 @@ ORDER BY MAX(ABS(PUNTOS_LOCAL - PUNTOS_VISITANTE)) DESC
 LIMIT 1;
 
 #15. Mostrar quien gana en cada partido (codigo, equipo_local, equipo_visitante, equipo_ganador), en caso de empate sera null.
-SELECT CODIGO, EQUIPO_LOCAL, EQUIPO_VISITANTE, EQUIPO_GANADOR
+SELECT CODIGO, EQUIPO_LOCAL, EQUIPO_VISITANTE, EQUIPO_GANADOR;
