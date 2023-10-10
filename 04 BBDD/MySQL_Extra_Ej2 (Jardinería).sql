@@ -110,21 +110,105 @@ INNER JOIN EMPLEADO E
 ON C.CODIGO_EMPLEADO_REP_VENTAS = E.CODIGO_EMPLEADO; 
 
 #2. Muestra el nombre de los clientes que hayan realizado pagos junto con el nombre de sus representantes de ventas.
+SELECT DISTINCT C.NOMBRE_CLIENTE, E.NOMBRE, P.CODIGO_CLIENTE 
+FROM CLIENTE C 
+INNER JOIN EMPLEADO E 
+ON C.CODIGO_EMPLEADO_REP_VENTAS = E.CODIGO_EMPLEADO
+INNER JOIN PAGO P 
+ON C.CODIGO_CLIENTE = P.CODIGO_CLIENTE;
 
 #3. Muestra el nombre de los clientes que no hayan realizado pagos junto con el nombre de sus representantes de ventas.
+SELECT DISTINCT C.NOMBRE_CLIENTE, E.NOMBRE
+FROM CLIENTE C
+INNER JOIN EMPLEADO E
+ON C.CODIGO_EMPLEADO_REP_VENTAS = E.CODIGO_EMPLEADO
+WHERE C.CODIGO_CLIENTE NOT IN(
+	SELECT DISTINCT CODIGO_CLIENTE 
+	FROM PAGO);
+
 #4. Devuelve el nombre de los clientes que han hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
+SELECT DISTINCT C.NOMBRE_CLIENTE, E.NOMBRE, O.CIUDAD
+FROM CLIENTE C 
+INNER JOIN EMPLEADO E 
+ON C.CODIGO_EMPLEADO_REP_VENTAS = E.CODIGO_EMPLEADO
+INNER JOIN PAGO P 
+ON C.CODIGO_CLIENTE = P.CODIGO_CLIENTE
+INNER JOIN OFICINA O
+ON E.CODIGO_OFICINA = O.CODIGO_OFICINA;
+
 #5. Devuelve el nombre de los clientes que no hayan hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
+SELECT DISTINCT C.NOMBRE_CLIENTE, E.NOMBRE, O.CIUDAD
+FROM CLIENTE C
+INNER JOIN EMPLEADO E ON C.CODIGO_EMPLEADO_REP_VENTAS = E.CODIGO_EMPLEADO
+INNER JOIN OFICINA O ON E.CODIGO_OFICINA = O.CODIGO_OFICINA
+WHERE C.CODIGO_CLIENTE NOT IN (SELECT DISTINCT
+	CODIGO_CLIENTE
+    FROM PAGO);
+
 #6. Lista la dirección de las oficinas que tengan clientes en Fuenlabrada.
+SELECT DISTINCT O.LINEA_DIRECCION1
+FROM OFICINA O
+INNER JOIN EMPLEADO E ON O.CODIGO_OFICINA = E.CODIGO_OFICINA
+INNER JOIN CLIENTE C ON E.CODIGO_EMPLEADO = C.CODIGO_EMPLEADO_REP_VENTAS
+WHERE C.CIUDAD = 'FUENLABRADA';
+
 #7. Devuelve el nombre de los clientes y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
+-- SELECT * FROM CLIENTE;
+-- SELECT * FROM EMPLEADO;
+-- SELECT * FROM OFICINA;
+SELECT C.NOMBRE_CLIENTE, E.NOMBRE, O.CIUDAD
+FROM CLIENTE C
+INNER JOIN EMPLEADO E ON C.CODIGO_EMPLEADO_REP_VENTAS = E.CODIGO_EMPLEADO
+INNER JOIN OFICINA O ON E.CODIGO_OFICINA = O.CODIGO_OFICINA;
+
+
 #8. Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes.
+SELECT E1.NOMBRE AS 'Nombre Empleado', E2.NOMBRE AS 'Jefe'
+FROM EMPLEADO E1
+INNER JOIN EMPLEADO E2 ON E1.CODIGO_JEFE = E2.CODIGO_EMPLEADO; 
+
 #9. Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
+-- SELECT * FROM PEDIDO; -- WHERE FECHA_ENTREGA > FECHA_ESPERADA
+-- SELECT * FROM CLIENTE;
+SELECT DISTINCT C.NOMBRE_CLIENTE
+FROM CLIENTE C
+INNER JOIN PEDIDO P ON C.CODIGO_CLIENTE = P.CODIGO_CLIENTE
+WHERE P.FECHA_ENTREGA > P.FECHA_ESPERADA;
+
 #10. Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.
+SELECT DISTINCT GAMA_PRODUCTO.GAMA 
+FROM GAMA_PRODUCTO 
+INNER JOIN PRODUCTO ON GAMA_PRODUCTO.GAMA = PRODUCTO.GAMA
+INNER JOIN DETALLE_PEDIDO ON PRODUCTO.CODIGO_PRODUCTO = DETALLE_PEDIDO.CODIGO_PRODUCTO
+INNER JOIN PEDIDO ON DETALLE_PEDIDO.CODIGO_PEDIDO = PEDIDO.CODIGO_PEDIDO
+INNER JOIN CLIENTE ON PEDIDO.CODIGO_CLIENTE = CLIENTE.CODIGO_CLIENTE;
+
 
 	-- Consultas multitabla (Composición externa) Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, JOIN.
 #1. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.
+SELECT DISTINCT C.NOMBRE_CLIENTE
+FROM CLIENTE C
+LEFT JOIN PAGO P ON P.CODIGO_CLIENTE = C.CODIGO_CLIENTE
+WHERE C.CODIGO_CLIENTE NOT IN (SELECT DISTINCT
+            CODIGO_CLIENTE 
+            FROM PAGO);
+
 #2. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pedido.
+SELECT DISTINCT C.NOMBRE_CLIENTE, P.CODIGO_PEDIDO
+FROM CLIENTE C
+LEFT JOIN PEDIDO P ON P.CODIGO_CLIENTE = C.CODIGO_CLIENTE
+WHERE P.CODIGO_PEDIDO IS NULL;
+
 #3. Devuelve un listado que muestre los clientes que no han realizado ningún pago y los que no han realizado ningún pedido.
+SELECT DISTINCT P.CODIGO_CLIENTE, C.NOMBRE_CLIENTE FROM CLIENTE C RIGHT JOIN PAGO P ON P.CODIGO_CLIENTE = C.CODIGO_CLIENTE;
+SELECT DISTINCT P.CODIGO_CLIENTE, C.NOMBRE_CLIENTE FROM CLIENTE C LEFT JOIN PAGO P ON P.CODIGO_CLIENTE = C.CODIGO_CLIENTE;
+SELECT * FROM PAGO RIGHT JOIN CLIENTE ON PAGO.CODIGO_CLIENTE = CLIENTE.CODIGO_CLIENTE WHERE PAGO.FECHA_PAGO IS NULL;
+
 #4. Devuelve un listado que muestre solamente los empleados que no tienen una oficina asociada.
+select * from oficina;
+SELECT * FROM EMPLEADO;
+SELECT E.NOMBRE, E.CODIGO_OFICINA FROM EMPLEADO E LEFT JOIN OFICINA O ON E.CODIGO_OFICINA = O.CODIGO_OFICINA WHERE E.CODIGO_OFICINA IS NULL;
+
 #5. Devuelve un listado que muestre solamente los empleados que no tienen un cliente asociado.
 #6. Devuelve un listado que muestre los empleados que no tienen una oficina asociada y los que no tienen un cliente asociado.
 #7. Devuelve un listado de los productos que nunca han aparecido en un pedido.
@@ -133,13 +217,39 @@ ON C.CODIGO_EMPLEADO_REP_VENTAS = E.CODIGO_EMPLEADO;
 #10. Devuelve un listado con los datos de los empleados que no tienen clientes asociados y el nombre de su jefe asociado.
 	-- Consultas resumen
 #1. ¿Cuántos empleados hay en la compañía?
+SELECT COUNT(CODIGO_EMPLEADO) 
+FROM EMPLEADO;
+
 #2. ¿Cuántos clientes tiene cada país?
+SELECT PAIS, COUNT(PAIS) AS CANT_CLIENTES FROM CLIENTE GROUP BY PAIS;
+
 #3. ¿Cuál fue el pago medio en 2009?
+SELECT * FROM PAGO;
+SELECT AVG(TOTAL) AS PROMEDIO
+FROM PAGO
+WHERE YEAR(FECHA_PAGO) = 2009;
+
 #4. ¿Cuántos pedidos hay en cada estado? Ordena el resultado de forma descendente por el número de pedidos.
+SELECT COUNT(ESTADO) AS CANTIDAD, ESTADO 
+FROM PEDIDO 
+GROUP BY ESTADO 
+ORDER BY CANTIDAD DESC;
+
 #5. Calcula el precio de venta del producto más caro y más barato en una misma consulta.
+SELECT * FROM PRODUCTO;
+SELECT MAX(PRECIO_VENTA) as PRECIO FROM PRODUCTO
+UNION
+SELECT MIN(PRECIO_VENTA) as PRECIO FROM PRODUCTO;
+
 #6. Calcula el número de clientes que tiene la empresa.
+SELECT COUNT(CODIGO_CLIENTE) FROM CLIENTE;
+
 #7. ¿Cuántos clientes tiene la ciudad de Madrid?
+SELECT COUNT(CODIGO_CLIENTE) FROM CLIENTE WHERE CIUDAD = "MADRID";
+
 #8. ¿Calcula cuántos clientes tiene cada una de las ciudades que empiezan por M?
+SELECT COUNT(CODIGO_CLIENTE) FROM CLIENTE WHERE CIUDAD LIKE "M%";
+
 #9. Devuelve el nombre de los representantes de ventas y el número de clientes al que atiende cada uno.
 #10. Calcula el número de clientes que no tiene asignado representante de ventas.
 #11. Calcula la fecha del primer y último pago realizado por cada uno de los clientes. El listado deberá mostrar el nombre y los apellidos de cada cliente.
@@ -156,12 +266,32 @@ ON C.CODIGO_EMPLEADO_REP_VENTAS = E.CODIGO_EMPLEADO;
      -- Subconsultas con operadores básicos de comparación
 #1. Devuelve el nombre del cliente con mayor límite de crédito.
 #2. Devuelve el nombre del producto que tenga el precio de venta más caro.
+SELECT NOMBRE
+FROM PRODUCTO
+WHERE PRECIO_VENTA = (
+	SELECT 
+    MAX(PRECIO_VENTA)
+    FROM PRODUCTO);
+
 #3. Devuelve el nombre del producto del que se han vendido más unidades. (Tenga en cuenta que tendrá que calcular cuál es el número total de unidades que se han vendido de cada
 	-- producto a partir de los datos de la tabla detalle_pedido. Una vez que sepa cuál es el código del producto, puede obtener su nombre fácilmente.)
 #4. Los clientes cuyo límite de crédito sea mayor que los pagos que haya realizado. (Sin utilizar INNER JOIN).
 #5. Devuelve el producto que más unidades tiene en stock.
+SELECT NOMBRE 
+FROM PRODUCTO 
+WHERE CANTIDAD_EN_STOCK = (
+	SELECT MAX(CANTIDAD_EN_STOCK) 
+    FROM PRODUCTO);
+
 #6. Devuelve el producto que menos unidades tiene en stock.
+SELECT NOMBRE 
+FROM PRODUCTO 
+WHERE CANTIDAD_EN_STOCK = (
+	SELECT MIN(CANTIDAD_EN_STOCK) 
+    FROM PRODUCTO);
+
 #7. Devuelve el nombre, los apellidos y el email de los empleados que están a cargo de Alberto Soria.
+
 
 	-- Subconsultas con ALL y ANY
 #1. Devuelve el nombre del cliente con mayor límite de crédito.
