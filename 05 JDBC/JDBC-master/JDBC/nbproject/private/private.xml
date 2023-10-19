@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/AsteriX/Documents/NetBeansProjects/EggEjemplos/JDBC/src/com/redsocial/dominio/mascota/MascotaService.java</file>
-            <file>file:/C:/Users/AsteriX/Documents/NetBeansProjects/EggEjemplos/JDBC/src/com/redsocial/persistencia/DAO.java</file>
-            <file>file:/C:/Users/AsteriX/Documents/NetBeansProjects/EggEjemplos/JDBC/src/com/redsocial/dominio/usuario/UsuarioService.java</file>
-            <file>file:/C:/Users/AsteriX/Documents/NetBeansProjects/EggEjemplos/JDBC/src/com/redsocial/persistencia/MascotaDAO.java</file>
-            <file>file:/C:/Users/AsteriX/Documents/NetBeansProjects/EggEjemplos/JDBC/src/com/redsocial/persistencia/UsuarioDAO.java</file>
-            <file>file:/C:/Users/AsteriX/Documents/NetBeansProjects/EggEjemplos/JDBC/src/principal/Principal.java</file>
+            <file>file:/C:/Users/dario/OneDrive/Documents/Globant/05%20JDBC/JDBC-master/JDBC/src/com/redsocial/persistencia/DAO.java</file>
+            <file>file:/C:/Users/dario/OneDrive/Documents/Globant/05%20JDBC/JDBC-master/JDBC/src/com/redsocial/persistencia/MascotaDAO.java</file>
+            <file>file:/C:/Users/dario/OneDrive/Documents/Globant/05%20JDBC/JDBC-master/JDBC/src/principal/Principal.java</file>
         </group>
     </open-files>
 </project-private>
