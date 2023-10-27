@@ -1,0 +1,6 @@
+try {
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaPU");
+            EntityManager em = emf.createEntityManager();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
