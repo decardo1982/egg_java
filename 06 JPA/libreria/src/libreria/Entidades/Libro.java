@@ -3,6 +3,7 @@ package libreria.Entidades;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Libro {
@@ -16,6 +17,7 @@ public class Libro {
     private Integer ejemplaresPrestados;
     private Integer ejemplaresRestantes;
     private Boolean alta;
+    @ManyToOne
     private Autor autor;
     private Editorial editorial;
 
