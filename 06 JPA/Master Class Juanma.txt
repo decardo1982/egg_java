@@ -1,0 +1,69 @@
+Entidad hace alusión a una tabla de base de datos la entidad es un reflejo de la table de la base de datos, todos los atributos deberian ser columnas
+
+enums hoy no importa
+
+
+Java Persistence API
+--------------------
+Herramienta que aporta recursos para que tengamos cierta facilidad en la manipulación de DB utilizando JAVA (no hace falta IDe de bbdd sino que lo hacemos desde el código)
+A diferencia de JDBC, se facilita en varias cosas, el llamado JPQL que es un lenguaje para hacer consultas a la base de datos.
+
+Empezamos primeramente por EclipseLink (el otro es Hibernate).
+-Incluir las clases de entidad, sin eso no funciona. Es lo que JPA transforma en tablas en la base de datos.
+-Seleccionar  la JDBC connection correcta (la base de datos debe estar previamente creada).
+-Table Generation Strategy: Creat, Drop and create, None. Esto se usa al principio nada más. Si solo ponemos Create, JPA solo vuelve a crear las tablas y si lo volvemos a ejecutar, sigue alimentando esas tablas. Si elegimos Drop and Create, cada vez que ejecutemos el proyecto, elimina todo y vuelve a crear.
+Hay otros IDE que no tienen la interfaz gráfica de Eclipse, así que hay que tener en cuenta el código.
+
+Respetar los nombres!!! buena práctica
+
+***
+Entidades
+---------
+
+A la hora de crear, si sabemos que va a ser una entidad, crear "Entity Class" en vez de creara una Java Class y agregar el mapeo.
+
+Siempre vamos a necesitar un ID en la entity y siempre un constructor vacío.
+Id string, esquema de generación "uuid"
+
+-implements serializable: en un caso donde vamos a tener que guardar ciertas cosas en la cache, es como que se convierte en los objetos, se almacena de cierta forma y se vuelve a reconstruir en otro lugar. Si no lo ponemos, no pasa nada pero es bueno saberlo.
+
+**
+@Column
+nos permite configurar distintos aspectos de ese atributo, por ejemplo, tenemos un atributo nombre y queremos cambiarlo que no aparezca nombre, lo podemos hacer. Podemos configurar qué se va a mostrar y cómo se va a mostrar. No es estrictamente necesario utilizarla.
+Si nosotros ingresamos un valor que ya existe por consola, nos va a tirar una excepción (el nombre / mail ya existe). Cuando llenamos un formulario y tocamos "enviar", si el dato ya existe va a rebotar y traer la excepción. Todo eso que sucede consume recursos, por lo que antes de que hagamos todos los pasos podemos hacer la verificación. 
+En un programa mucho más grande, qué sucedería si 2 usuarios se quieren registrar al mismo tiempo con el mismo nombre? Para eso sirve la verificación
+
+***
+Relaciones: tratamos de no usar ManyToMany en lo posible porque se nos puede complicar un poco. Tener en cuenta las relaciones direccionales: el hecho de poner una anotación en una entidad y en otra que esté relacionada. En algunos casos tiene sentido hacerlo y en otros no. Tiene sentido si quisiéramos acceder a los atributos desde las dos entidades. Por ejemplo tenemos un autor con distintos libros, con el getLibros nosotros podemos acceder a toda esa información, peor no a la inversa: deberíamos usar una query. Si fuese bidireccional sí podríamos acceder desde el libro al autor.
+
+
+/*/*/*/*/
+Persistencia
+------------
+Necesitamos los DAO para poder conectar con la base de datos. Vamos a usar a través de la clase persistencia el atributo createEntitiyManagerFactory que nos crea un entity manager para conectarnos con la base de datos. El método createEntityManager va a llamar al factory y va a crear una instancia del EM, que es fundamental de JPA. Va a persistir (guardar) datos en la base de datos.
+
+La estructura del proyecto: por cada entidad que tengamos vamos a tener un DAO y cada DAO va a tener sus métodos: conectar, desconectar, guardar, eliminar, editar. Son los básicos.
+
+Se puede crear una clase DAO padre para que hereden las hijas.
+
+Básicamente sería:
+-conectar
+-begin the transaction
+-persistir el parámetro (mascota)
+-commitear (confirmar) la transacción
+-desconectar
+
+Es fundamental entender qué estamos haciendo antes de empezar a codear. El DAO es el que hace todas las transacciones, en sprint vamos a tener repositorios que se comunican con la base de datos por lo que es necesario saber el concepto general.
+
+En buscarPorDNI se castea la Mascota porque está trayendo un objeto "general" digamos, JAVA no sabe que está trayendo un objeto mascota sino que la query trae un tipo "object".
+
+*******************
+
+Servicios
+---------
+
+Lo único que cambia ahora es que cada vez que creemos un método ahora no va a tener sentido que no usemos el DAO porque sino no estaríamos persistiendo en nuestra base de datos. Antes creábamos un objeto, lo mostrábamos por consola y eso era todo. Ahora necesitamos del DAO porque estamos usando la base de datos.
+Cada vez que ejecutamos un método del servicio, ejecutamos también un método del DAO.
+
+Por ejemplo para crear masctoa, la seteamos y luego es el método DAO el que la va a persistir en la DB
+
