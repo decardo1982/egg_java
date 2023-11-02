@@ -1,41 +1,42 @@
 package jpaprueba.logica;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Carrera implements Serializable {
+public class Materia implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String nombre;
-    
-    @OneToMany (mappedBy = "carre")
-    private List<Materia> listaMaterias;
+    private String tipo;
 
-    public Carrera() {
+    @ManyToOne
+    private Carrera carre;
+
+    public Materia() {
     }
 
-    public Carrera(int id, String nombre, List<Materia> listaMaterias) {
+    public Materia(int id, String nombre, String tipo, Carrera carre) {
         this.id = id;
         this.nombre = nombre;
-        this.listaMaterias = listaMaterias;
+        this.tipo = tipo;
+        this.carre = carre;
     }
 
-    public List<Materia> getListaMaterias() {
-        return listaMaterias;
+    public Carrera getCarre() {
+        return carre;
     }
 
-    public void setListaMaterias(List<Materia> listaMaterias) {
-        this.listaMaterias = listaMaterias;
+    public void setCarre(Carrera carre) {
+        this.carre = carre;
     }
-
+    
     
 
     public int getId() {
@@ -52,6 +53,14 @@ public class Carrera implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
 }

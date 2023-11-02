@@ -6,12 +6,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jpaprueba.logica.Alumno;
 import jpaprueba.logica.Carrera;
+import jpaprueba.logica.Materia;
 import jpaprueba.persistencia.exceptions.NonexistentEntityException;
 
 public class ControladoraPersistencia {
 
     AlumnoJpaController aluJpa = new AlumnoJpaController();
     CarreraJpaController carreJpa = new CarreraJpaController();
+    MateriaJpaController mateJpa = new MateriaJpaController();
 
     public void crearAlumno(Alumno alu) {
 
@@ -80,6 +82,37 @@ public class ControladoraPersistencia {
         List<Carrera> lista = carreJpa.findCarreraEntities(); 
         ArrayList<Carrera> listaCarreras = new ArrayList(lista);
         return listaCarreras;
+    }
+
+    //Materia
+    public void crearMateria(Materia mate) {
+        mateJpa.create(mate);
+    }
+
+    public void eliminarMateria(int id) {
+        try {
+            mateJpa.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void editarMateria(Materia mate) {
+        try {
+            mateJpa.edit(mate);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Materia traerMateria(int id) {
+        return mateJpa.findMateria(id);
+    }
+
+    public ArrayList<Materia> traerListaMaterias() {
+        List<Materia> lista = mateJpa.findMateriaEntities();
+        ArrayList<Materia> listaMaterias = new ArrayList(lista);
+        return listaMaterias;
     }
 
 }

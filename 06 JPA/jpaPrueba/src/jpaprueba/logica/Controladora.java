@@ -7,7 +7,6 @@ public class Controladora {
 
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
 
-    
     //Alumno
     public void crearAlumno(Alumno alu) {
 
@@ -57,6 +56,32 @@ public class Controladora {
 
     public ArrayList<Carrera> traerListaCarreras() {
         return controlPersis.traerListaCarreras();
+
+    }
+
+    //Materia
+    public void crearMateria(Materia mate) {
+
+        controlPersis.crearMateria(mate);
+    }
+
+    public void eliminarMateria(int id) {
+
+        controlPersis.eliminarMateria(id);
+    }
+
+    public void editarMateria(Materia mate) {
+
+        controlPersis.editarMateria(mate);
+    }
+
+    //es una función porque tiene que retornar un valor
+    public Materia traerMateria(int id) {
+        return controlPersis.traerMateria(id);
+    }
+
+    public ArrayList<Materia> traerListaMaterias() {
+        return controlPersis.traerListaMaterias();
 
     }
 

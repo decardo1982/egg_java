@@ -1,0 +1,5 @@
+ACLARACIÓN IMPORTANTE
+EN DOCUMENTO "1 - INICIANDO CON PAGINAS WEB.pdf" van a encontrar el apartado
+"¿COMO INSTALAR EL PLUGIN DE SPRING EN NETBANS?" donde menciona que van a encontrar el plugin en el aula virtual,
+no lo van a encontrar en el aula virtual ya que fue quitado por problemas de compatibilidad, para crear un proyecto
+recomendamos utilizar la pagina https://start.spring.io/ donde van a poder configurar lo necesario para tener listo el proyecto
