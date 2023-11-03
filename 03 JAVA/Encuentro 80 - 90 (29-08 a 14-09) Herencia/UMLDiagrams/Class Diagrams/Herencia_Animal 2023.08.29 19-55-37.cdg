@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Herencia_Animal">
+  <ClassDiagramComponents>
+    <Class name="Animal" package="herencia_animal" visibility="public" xPosition="347.0" yPosition="150.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="hacerRuido" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Perro" package="herencia_animal" visibility="public" xPosition="20.0" yPosition="190.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="hacerRuido" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Gato" package="herencia_animal" visibility="public" xPosition="347.0" yPosition="336.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="hacerRuido" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Elefante" package="herencia_animal" visibility="public" xPosition="699.0" yPosition="122.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="hacerRuido" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Herencia_Animal" package="herencia_animal" visibility="public" xPosition="330.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="herencia_animal.Gato" target="herencia_animal.Animal"/>
+    <IsRelation name="is" source="herencia_animal.Elefante" target="herencia_animal.Animal"/>
+    <IsRelation name="is" source="herencia_animal.Perro" target="herencia_animal.Animal"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
