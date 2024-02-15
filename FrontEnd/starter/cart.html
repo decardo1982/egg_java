@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Tienda Virtual</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="search">
+          <div class="logo">
+            <img src="assets/tiendamia-logo.svg" width="218" alt="Logo store" />
+          </div>
+          <div class="form">
+            <form>
+              <input type="text" placeholder="Search" />
+            </form>
+          </div>
+          <div class="social">
+            <ul>
+              <li><img src="assets/facebook.png" alt="facebook logo" /></li>
+              <li><img src="assets/instagram.png" alt="instagram logo" /></li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav">
+          <ul>
+            <li><a href="index.html">Ofertas de la semana</a></li>
+            <li><a href="#">Cómo comprar</a></li>
+            <li><a href="#">Costos y tarifas</a></li>
+            <li><a href="#">Mis pedidos</a></li>
+            <li><a href="#">Invita y gana</a></li>
+            <li><a href="#">Garantía de Entrega</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section id="hero">
+      <div class="container">
+        <div class="title-container">
+          <span>Mi carrito</span>
+        </div>
+      </div>
+    </section>
+    <main>
+      <div class="cart-container">
+        <div class="card resume">
+          <div>
+            <h2>Resumen del pedido</h2>
+            <div class="subtotal">
+              <h3>Subtotal</h3>
+              <strong class="price"></strong>
+            </div>
+            <small>Incluye impuesto PAIS y percepción AFIP.</small>
+          </div>
+          <button class="btn-primary buy-button">Finaliza tu compra</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="columns-container">
+          <div class="col">
+            <ul>
+              <li class="col-main-item">
+                <a href="#">Ofertas de la semana</a>
+              </li>
+              <li><a href="#">Laptops</a></li>
+              <li><a href="#">Audio</a></li>
+              <li><a href="#">Auriculares</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Cómo comprar</a></li>
+              <li><a href="#">Formas de pago</a></li>
+              <li><a href="#">Envíos</a></li>
+              <li><a href="#">Devoluciones</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Costos y tarifas</a></li>
+              <li><a href="#">Impuestos</a></li>
+              <li><a href="#">Facturación</a></li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Mis pedidos</a></li>
+              <li><a href="#">Pedir nuevamente</a></li>
+              <li><a href="#">Lista de deseos</a></li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <ul>
+              <li class="col-main-item"><a href="#">Garantía de entrega</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">Curso de HTML + CSS 2023</div>
+      </div>
+    </footer>
+
+    <script>
+      const cart = [
+        {
+          title: "MacBook Pro 13'4",
+          description:
+            "MacBook Pro 13'4 con 8GB de RAM y 512GB de almacenamiento",
+          price: 750000,
+          quantity: 1,
+          image: "assets/images/mock1.jpg",
+        },
+        {
+          title: "MacBook Pro 15'4",
+          description:
+            "MacBook Pro 15'4 con 8GB de RAM y 512GB de almacenamiento",
+          price: 800000,
+          quantity: 2,
+          image: "assets/images/mock1.jpg",
+        },
+        {
+          title: "Lenovo",
+          description: "Lenovo 13'4 con 8GB de RAM y 256GB de almacenamiento",
+          price: 75000,
+          quantity: 1,
+          image: "assets/images/mock1.jpg",
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", populate);
+      function populate() {
+        const cartContainer = document.querySelector(".cart-container");
+        document.querySelector(".products")?.remove();
+        if (!cartContainer) return console.log("Error");
+        const productContainer = document.createElement("div");
+        productContainer.classList.add("card", "products");
+        cart.forEach((product) => {
+          const productElement = document.createElement("article");
+          productElement.classList.add("product-cart");
+          const productImage = document.createElement("img");
+          productImage.src = product.image;
+          productImage.alt = product.title;
+          const productMiddle = document.createElement("div");
+          productMiddle.classList.add("middle");
+          const productInfo = document.createElement("div");
+          productInfo.classList.add("info");
+          const productTitle = document.createElement("strong");
+          productTitle.classList.add("title");
+          productTitle.textContent = product.title;
+          const productDescription = document.createElement("span");
+          productDescription.classList.add("description");
+          productDescription.textContent = product.description;
+          const productInput = document.createElement("input");
+          productInput.type = "number";
+          productInput.value = product.quantity;
+          productInput.min = 1;
+          productInput.addEventListener("change", (event) => {
+            const value = event.target.value;
+            const index = cart.findIndex(
+              ({ title }) => product.title === title
+            );
+            if (index < 0) return console.log("Error");
+            cart[index].quantity = value;
+            renderTotalPrice();
+          });
+          const productPrice = document.createElement("strong");
+          productPrice.classList.add("price");
+          productPrice.textContent = `AR$ ${formatPrice(product.price)}`;
+          productInfo.appendChild(productTitle);
+          productInfo.appendChild(productDescription);
+          productMiddle.appendChild(productInfo);
+          productMiddle.appendChild(productInput);
+          productElement.appendChild(productImage);
+          productElement.appendChild(productMiddle);
+          productElement.appendChild(productPrice);
+          productContainer.appendChild(productElement);
+        });
+        cartContainer.insertAdjacentElement("afterbegin", productContainer);
+        renderTotalPrice();
+      }
+      function renderTotalPrice() {
+        const priceElement = document.querySelector(".resume .price");
+        priceElement.textContent = formatPrice(
+          cart.reduce(
+            (total, { price, quantity }) => total + price * quantity,
+            0
+          )
+        );
+      }
+      function formatPrice(price) {
+        return new Intl.NumberFormat("es-AR", {
+          style: "currency",
+          currency: "ARS",
+        }).format(price);
+      }
+    </script>
+  </body>
+</html>

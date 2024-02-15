@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="scripts/funciones.js"></script>
+    <title>Funciones</title>
+  </head>
+  <body>
+    <div>
+      <h1>Mi primera funcion</h1>
+      <p>Ingresa tu nombre</p>
+      <input type="text" id="nombre" />
+      <button onclick="saludar()">Saludar</button>
+    </div>
+
+    <div>
+      <h1>Calculadora</h1>
+      <p>Ingrese el primer número</p>
+      <input type="number" id="n1" placeholder="Primer numero" />
+
+      <select id="operacion">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+
+      <input type="number" id="n2" placeholder="Segundo numero" />
+      
+      <button onclick="realizarCalculo()">Calcular</button>
+
+      <div id="resultado"></div>
+      <p></p>
+    </div>
+
+    <div>
+      <h1>Contar caracteres</h1>
+      <p>Ingrese la palabra</p>
+      <input type="text" id="palabra">
+      <button onclick="contarCaracteres()">Contar letras</button>
+    </div>
+  </body>
+</html>

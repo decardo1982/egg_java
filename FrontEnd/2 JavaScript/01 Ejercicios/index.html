@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="scripts/script.js"></script>
+    <script src="scripts/saludo1.js"></script>
+    <script src="scripts/edad.js"></script>
+    <script src="scripts/esPalindromo.js"></script>
+    <script src="scripts/colorAleatorio.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <div>
+      <h1>¡Enlace exitoso!</h1>
+      <p id="mensaje"></p>
+    </div>
+
+    <div>
+      <h3>Ingresa tu nombre</h3>
+      <input type="text" id="nombreInput" placeholder="Ingresa tu nombre" />
+      <button onclick="obtenerNombre()">Enviar</button>
+    </div>
+
+    <div>
+      <h3>Ingrese un año de nacimiento</h3>
+      <input
+        type="number"
+        id="anioNacimiento"
+        placeholder="Ingresa tu año de nacimiento"
+      />
+      <button onclick="obtenerEdad()">Enviar</button>
+    </div>
+
+    <div>
+      <h3>Ingrese una frase o palabra para determinar si es palíndromo</h3>
+      <input
+        type="text"
+        id="palindromo"
+        placeholder="Ingresa una frase o palabra"
+      />
+      <button onclick="esPalindromo()">Enviar</button>
+    </div>
+
+    <div id="divColor">
+      <h3>Cambia el color aleatoriamente con cada click</h3>
+    </div>
+  </body>
+</html>

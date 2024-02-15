@@ -1,6 +1,7 @@
 package com.biblioteca.biblioteca.servicios;
 
 import com.biblioteca.biblioteca.entidades.Autor;
+import com.biblioteca.biblioteca.excepciones.MiException;
 import com.biblioteca.biblioteca.repositorios.AutorRepositorio;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,9 @@ public class AutorServicio {
     AutorRepositorio autorRepositorio;
 
     @Transactional
-    public void crearAutor(String nombre) {
+    public void crearAutor(String nombre) throws MiException{
+        
+        validar(nombre);
 
         Autor autor = new Autor();
 
@@ -34,7 +37,9 @@ public class AutorServicio {
         return autores;
     }
     
-    public void modificarAutor(String nombre, String id){
+    public void modificarAutor(String nombre, String id) throws MiException{
+        
+        validar(nombre);
         
       Optional<Autor> respuesta = autorRepositorio.findById(id);
       
@@ -44,6 +49,12 @@ public class AutorServicio {
             autor.setNombre(nombre);
             
             autorRepositorio.save(autor);
+        }
+    }
+    
+    private void validar(String nombre) throws MiException{
+        if (nombre.isEmpty() || nombre == null) {
+            throw new MiException("El nombre del autor no puede estar vacío ni ser nulo");
         }
     }
 

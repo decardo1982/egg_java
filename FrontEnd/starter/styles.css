@@ -1,0 +1,436 @@
+body,
+html {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+header {
+  /* border: 1px solid red; */
+  height: 152px;
+  align-items: baseline;
+}
+header .containter {
+  margin-top: 5px;
+  align-items: center;
+}
+
+section {
+  /*border: 1px solid purple;*/
+  height: 340px;
+}
+
+main {
+  /*border: 1px solid blue;*/
+  height: auto;
+}
+
+footer {
+  min-height: 368px;
+  /*color: #009145;*/
+}
+
+.container {
+  width: 1220px;
+  margin: 0 auto;
+  /*border: 1px solid springgreen;*/
+  height: inherit;
+  min-height: inherit;
+}
+
+.cart-container {
+  width: 1220px;
+  margin: 0 auto;
+  /*border: 1px solid springgreen;*/
+  height: inherit;
+  min-height: inherit;
+}
+
+.card .resume {
+  background-color: #f0f0f0;
+  border-radius: 14px;
+  width: auto;
+  overflow: hidden;
+  transition: box-shadow 0.6s ease, tranform 0.6s ease;
+}
+
+/*Card de producto*/
+.product-card {
+  background-color: #f0f0f0;
+  border-radius: 14px;
+  width: auto;
+  overflow: hidden;
+  transition: box-shadow 0.6s ease, tranform 0.6s ease;
+}
+
+.product-card:hover{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  transition-duration: 0.6s;
+}
+.product-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center center;
+}
+.product-info {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.product-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22.27px;
+  word-wrap: break-word;
+  display: block;
+}
+.product-description {
+  font-size: 12px;
+  font-weight: 400;
+  color: #383838;
+  margin-bottom: 6px;
+}
+
+.product-price-block {
+  display: flex;
+  margin: 5px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-price-block .discount {
+  font-size: 12px;
+  font-weight: 700;
+  color: #428f13;
+}
+.product-tax-policy {
+  font-size: 11px;
+  font-weight: 300;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 10px 0px 10px 0px;
+}
+#hero {
+  background: url(./assets/hero_bg.png);
+  background-size: cover;
+  background-position: top center;
+  border: 1px solid purple;
+  height: 340px;
+}
+
+#hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title-container span {
+  display: block;
+  color: white;
+  font-weight: 700;
+}
+.title-container span:first-child {
+  font-size: 40px;
+}
+.title-container span:last-child {
+  font-size: 100px;
+  line-height: 80px;
+}
+
+header {
+  background-color: #ff3b3c;
+}
+header .logo img {
+  margin-top: 20px;
+}
+.search {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.search .form {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.search .form input {
+  height: 62px;
+  border-radius: 14px;
+  border: none;
+  width: 505px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.search .social ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search .social ul li {
+  padding: 0 10px;
+}
+
+.nav {
+  padding: 10px 0;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li a {
+  color: white;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+}
+
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #7525a7;
+  min-height: 368px;
+  /*border: 1px solid #009145;*/
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.columns-container .col ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.columns-container .col ul li {
+  padding: 5px 0;
+}
+
+.columns-container .col ul li.col-main-item {
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.columns-container .col ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.copyright {
+  border-top: 1px solid #ba53fb;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 30px 0;
+  box-sizing: border-box;
+}
+
+.product-images-block {
+  flex: 1;
+  padding: 5px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+}
+.thumbnail-container {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+.product-images-block .thumbnail-container {
+  max-width: 100%;
+  overflow: hidden; /* Mantiene la imagen dentro del contenedor */
+  margin: 5px; /* Ajusta el margen según sea necesario */
+  /*border: 1px solid #ccc; /* Opcional, si deseas bordes */
+  border-radius: 55px 10px 55px 10px;
+}
+
+.product-images-block .thumbnail-container img {
+  max-width: 100%;
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  object-fit: contain; /* Asegura que la imagen se ajuste completamente dentro del contenedor */
+  object-position: center center; /* Centra la imagen en el contenedor */
+}
+
+.product-description-block {
+  flex: 1;
+  padding: 5px;
+}
+
+.product-checkout-block {
+  flex: 1;
+  padding: 5px;
+}
+
+.product-description-block .product-name {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0;
+  word-wrap: break-word;
+}
+
+.product-images-block .img {
+  size: 50%;
+}
+
+.product-images-block .selector fieldset {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.product-images-block .selector select {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+}
+.product-description-block .description {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.product-img-block {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+table {
+  /* La siguiente propiedad evita que los bordes de las tablas sean dobles */
+  border-collapse: collapse;
+  width: fit-content;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+/* :nth-child(even) Esta pseudo-clase permite colorear el fondo de las filas impares (even) */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+th {
+  background-color: #0e0e0e;
+  color: white;
+}
+
+.purchase-options {
+  align-items: baseline;
+  margin-top: 20px;
+  display: flex;
+  margin-bottom: 10px; /* Espacio debajo del grupo superior */
+}
+.purchase-options input {
+  height: 40px;
+  border-radius: 10px;
+  border: solid 2px;
+  width: 50px;
+  margin-right: 10px;
+  margin-left: 5px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.quantity {
+  margin-bottom: 10px; /* Espacio debajo del grupo superior */
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  width: 62px;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.buy-button {
+  width: 100%;
+  background: #ff3b3c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+}
+.add-to-cart-button {
+  width: 100%;
+  border: 1px solid #ff3b3c;
+  color: #ff3b3c;
+  font-weight: bold;
+  height: 40px;
+  border-radius: 10px;
+  margin-left: 5px;
+  
+}
+
+.checkout-container {
+  background-color: #ebebeb; /* Color de fondo claro */
+  padding: 33px; /* Espaciado interno */
+  border-radius: 2px; /* Bordes ligeramente redondeados */
+}
+.checkout-total-label {
+  color: #ff3b3c; /* Color distintivo para el texto 'Total:' */
+}
+.checkout-total-price {
+  font-size: 28px; /* Tamaño grande para el precio */
+  font-weight: 700; /* Fuente en negrita */
+  margin-top: 10px; /* Espacio por encima del precio */
+}
+.checkout-description {
+  line-height: 20.4px; /* Espaciado de línea para mejorar la legibilidad */
+  word-wrap: break-word; /* Asegura que el texto no desborde el contenedor */
+}
+.checkout-policy-list {
+  list-style-type: none; /* Elimina los marcadores de lista */
+  margin-bottom: 30px; /* Espacio debajo de la lista */
+}
+.checkout-policy-list li {
+  display: flex; /* Alineación horizontal de íconos y texto */
+  margin: 15px 0; /* Espacio entre elementos de la lista */
+}
+.checkout-policy-list li .policy-icon {
+  margin-right: 15px; /* Espacio entre el ícono y el texto */
+}
+.sales-title h2 {
+  text-align: center; /* Alineación central para el título */
+  margin-bottom: 42px; /* Espacio debajo del título */
+  font-size: 40px; /* Tamaño de fuente grande para captar atención */
+}

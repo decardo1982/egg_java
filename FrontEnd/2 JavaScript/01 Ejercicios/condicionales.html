@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="scripts/condicionales.js"></script>
+
+    <title>Condicionales</title>
+  </head>
+  <body>
+    <div>
+      <h1>Calificación</h1>
+      <h2>Condicional if</h2>
+      <p>Ingrese su calificación (de 0 a 100)</p>
+      <input
+        type="number"
+        min="0"
+        max="100"
+        id="calificacion"
+        placeholder="Calificacion"
+      />
+      <button onclick="evaluar()">Evaluar</button>
+    </div>
+
+    <div>
+      <h1>Descuento</h1>
+      <h2>If ternario</h2>
+      <!-- Escribe un programa que solicite al usuario ingresar el precio de un producto y
+      aplique un descuento del 10% si el precio es mayor o igual a $1000, y ningún descuento en caso contrario. 
+      Luego, muestra en la consola el precio final con el descuento aplicado.
+      let momento = (hora_actual < 12) ? "Antes del mediodía" : "Después del mediodía" -->
+
+      <p>Ingrese el precio del producto</p>
+      <input type="number" id="precio" placeholder="Precio" />
+      <button onclick="descuento()">Calcular descuento</button>
+    </div>
+
+    <div>
+      <!--Escribe un programa que reciba un número del 1 al 7 y muestre en la consola el día de la semana correspondiente utilizando la estructura switch.-->
+      <h1>Dia de la semana</h1>
+      <h2>Switch</h2>
+      <p>
+        Ingrese un número del 1 al 7 para mostrar el día de la semana correspondiente:
+      </p>
+      <input
+        type="number"
+        min="1"
+        max="7"
+        id="numDia"
+        placeholder="Día de la semana"
+      />
+      <button onclick="diaSemana()">Mostrar</button>
+    </div>
+  </body>
+</html>

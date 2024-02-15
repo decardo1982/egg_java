@@ -1,0 +1,56 @@
+https://egg-live.zoom.us/j/81028549659
+
+Julian Esteban Giraldo
+Psicólogo - Recruiting Analyst
+Medellín, Colombia
+
+Mauro Perez bancando los trapos en el chat
+
+CV de no más de 1 página, salvo excepciones
+
+Globant prefiere formato de CV con diseño más que ATS - podría ser buena idea tener los 2 formatos pero no sabemos qué pide la empresa. Vamos con formato de diseño y ya en formato PDF
+
+- ¿es necesario tener foto? 
+- idioma: es preferible indicar nivel b1, b2, c1, c2, etc, no medio / bajo / alto
+
+- competencias técnicas: herramientas, frameworks, lenguajes, testint, nubes. Las primeras que ponemos son las que más nos sntimos seguros porque intuitivamente asumimos que lo que está al final de la lista es lo que menos sabemos
+ . Java .  Spring.Boot . Hibernate, etc
+- competencias blandas, no es estrictamente necesario porque se convierte en un cliché y no aporta nada: más que nada se ve en una entrevista
+- perfil profesional: java developer, bilingüe, etc. 
+podemos pedir ayuda a chat gpt para darle formato más formal al perfil profesional
+- formación / competencias: a nadie le importa si fuiste boy scout
+
+- mes y año de inicio y finalización
+
+- capacidad de agencia: capacidad de tomar decisiones sobre su propio camino profesional, por ejemplo, un psicólogo o veterinario se decide por cambiar al mundo IT. Si bien se nombra el título actual, por ahí no ser tan específico en los detalles.
+
+-
+Nuestro perfil profesional es una mesa de 4 patas, si falta uno hay que sopesar con las otras 3
+-
+
+La entrevista es EL momento.
+-
+Saber qué contestar en cuanto a fortalezas y debilidades "se me complica organizar mis tiempos, pero a traves del uso de herramientas me pude organizar", da cuenta de que reconoces las posiibilidades de mejora y que te ocupas en resolverlo
+- cuentame de ti: de entrada, trayectoria profesional. No es malo hablar de cosas personales, pero 
+- preguntas raras: da cuenta de la capacidad o flexibilidad, buscar respuestas que nos favorezcan "si sos un árbol, cuál serías?" tomate tu tiempo, 15 segundos, para pensar "yo sería un roble porque tengo fortalezas, el roble es fuerte blabla" te deja en buenos términos con respecto a la pregunta.
+Si nos da el tiempo y la capacidad cognitiva "que querrá saber el reclutador?"
+-Situaciones: lo ideal es responder con situaciones reales, no "lo que haría", sino "lo que hice"
+
+este tipo de preguntas apunta a ver las habilidades blandas
+
+¿por qué queres hacer este cambio?
+
+"¿tenes alguna pregunta?" es bueno tener alguna pregunta, sobre la cultura de la compañía, misión, eal reclutador
+
+--
+Assessment: entrevista grupal
+se evalúa la capacidad para trabajar en equipo
+Hay un globo aerostático y cada persona tiene un rol diferente, el globo empieza a perder aire y se van a morir todos a no ser que tiren a 1. Monja, profesor, diseñador de interiores, etc. Demostrar capacidad argumentativa y creatividad para 
+
+--
+
+potenciar habilidades: aprovechar a, por ejemplo, estudiar inglés. Omegle, free fall talk, plataformas en inglés para fortalecer el idioma.
+
+..
+
+en cuanto a salario, en empresas grandes el rango salarial se vuelve información valiosa y es dificil. La realidad es que muchas empresas no publican su salario. Lo más probable es que se toque el tema: hay varias formas de proceso de selección, p.e. estoy buscando un java jr, tenemos bandas salariales establecidas, es probables que te digan ese rango. Por ahí buscan un perfil específico pero no un seniority particular, y como por cada seniority está más establecido. De cara al candidato, si no especifica el salario, preferible no preguntar de entrada. Los que se enfocan lo económico suelen ser los que más rotan.
