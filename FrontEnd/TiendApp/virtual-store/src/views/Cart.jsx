@@ -1,52 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
 
-    <script src="scripts/cart.js"></script>
-    <link rel="stylesheet" href="styles.css" />
-    <title>Tienda Virtual</title>
-  </head>
+import NavBar from './nav-bar';
 
-  <body>
-    <header>
-      <div class="container">
-        <div class="search">
-          <div class="logo">
-            <img src="assets/tiendamia-logo.svg" width="218" alt="Logo store" />
-          </div>
-          <div class="form">
-            <form>
-              <input type="text" placeholder="Search" />
-            </form>
-          </div>
-          <div class="social">
-            <ul>
-              <li><img src="assets/facebook.png" alt="facebook logo" /></li>
-              <li><img src="assets/instagram.png" alt="instagram logo" /></li>
-            </ul>
-          </div>
-        </div>
-        <div class="nav">
-          <ul>
-            <li><a href="index.html">Ofertas de la semana</a></li>
-            <li><a href="#">Cómo comprar</a></li>
-            <li><a href="#">Costos y tarifas</a></li>
-            <li><a href="#">Mis pedidos</a></li>
-            <li><a href="#">Invita y gana</a></li>
-            <li><a href="#">Garantía de Entrega</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <section id="hero">
+function Cart() {
+    return(
+        <>
+      <NavBar />  
+      <section id="hero">
       <div class="container">
         <div class="title-container">
           <span>Mi carrito</span>
@@ -54,8 +13,9 @@
       </div>
     </section>
     <main>
-      
-
+      <button class="btn-primary discount" id="btn-discount">
+        Aplicar 10%
+      </button>
       <div class="cart-container">
         <div class="card resume">
           <div>
@@ -66,11 +26,10 @@
             </div>
             <small>Incluye impuesto PAIS y percepción AFIP.</small>
           </div>
-          <button class="btn-primary buy-button">Finaliza tu compra</button>
+          <button class="btn-primary">Finaliza tu compra</button>
         </div>
       </div>
     </main>
-
     <footer>
       <div class="container">
         <div class="columns-container">
@@ -88,7 +47,7 @@
             <ul>
               <li class="col-main-item"><a href="#">Cómo comprar</a></li>
               <li><a href="#">Formas de pago</a></li>
-              <li><a href="#">Envíos</a></li>
+              <li><a href="#">Envios</a></li>
               <li><a href="#">Devoluciones</a></li>
             </ul>
           </div>
@@ -99,7 +58,6 @@
               <li><a href="#">Facturación</a></li>
             </ul>
           </div>
-
           <div class="col">
             <ul>
               <li class="col-main-item"><a href="#">Mis pedidos</a></li>
@@ -107,15 +65,16 @@
               <li><a href="#">Lista de deseos</a></li>
             </ul>
           </div>
-
           <div class="col">
             <ul>
-              <li class="col-main-item"><a href="#">Garantía de entrega</a></li>
+              <li class="col-main-item"><a href="#">Garantía de Entrega</a></li>
             </ul>
           </div>
         </div>
         <div class="copyright">Curso de HTML + CSS 2023</div>
       </div>
     </footer>
-  </body>
-</html>
+        </>
+    );
+}
+export default Cart;
